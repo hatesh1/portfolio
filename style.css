@@ -1,0 +1,274 @@
+ /* Index CSS */
+ /* Logo */
+ .logo {
+   width: 60px;
+   height: 60px;
+   background: black;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   font-weight: bold;
+   border-radius: 50%;
+
+ }
+
+ nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 60px 10%;
+
+ }
+
+ nav ul {
+   display: flex;
+   gap: 20px;
+   list-style: none;
+ }
+
+ a {
+   color: #000000;
+ }
+
+ .resume-btn {
+   padding: 12px 25px;
+   background: #60ce85;
+   color: rgb(4, 4, 4);
+   text-decoration: none;
+   border-radius: 20px;
+   font-weight: bold;
+
+ }
+
+
+ .burger {
+   display: none;
+   /* desktop pe hidden */
+   font-size: 28px;
+   cursor: pointer;
+   color: white;
+ }
+
+
+ /* Mobile view */
+ @media (max-width: 768px) {
+   nav ul {
+     display: none;
+     /* mobile pe hidden */
+     flex-direction: column;
+     background: rgb(53, 52, 52);
+     position: absolute;
+     top: 60px;
+     right: 10px;
+     padding: 15px;
+     border-radius: 10px;
+   }
+
+   nav ul.show {
+     display: flex;
+     /* burger click pe show hoga */
+   }
+
+   .burger {
+     display: block;
+     /* mobile pe show */
+   }
+ }
+
+
+ .hero {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 60px 10%;
+   color: rgb(0, 0, 0);
+
+ }
+
+ /* Left side text */
+ .hero-left .intro {
+   font-size: 20px;
+ }
+
+ .hero-left .hand {
+   font-size: 26px;
+ }
+
+ .hero-left .name {
+   font-size: 48px;
+   margin: 10px 0;
+ }
+
+ .hero-left .role {
+   font-size: 24px;
+   font-weight: bold;
+   margin-bottom: 15px;
+ }
+
+ .hero-left .desc {
+   font-size: 16px;
+   line-height: 1.6;
+   max-width: 500px;
+   margin-bottom: 20px;
+ }
+
+ .hero-left .btn {
+   display: inline-block;
+   padding: 12px 25px;
+   background: #60ce85;
+   color: rgb(4, 4, 4);
+   text-decoration: none;
+   border-radius: 20px;
+   font-weight: bold;
+ }
+
+ /* Right side image */
+ .hero-right img {
+   width: 350px;
+   height: auto;
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+   .hero {
+     flex-direction: column;
+     text-align: center;
+   }
+
+   .hero-right img {
+     margin-top: 30px;
+     width: 250px;
+   }
+ }
+
+
+ /* Resume footer */
+ .resume-footer {
+   margin-top: 20px;
+   padding-top: 12px;
+   border-top: 1px solid #e6e9ef;
+   text-align: center;
+   font-size: 14px;
+   color: #666;
+ }
+
+
+
+
+
+ /* About CSS */
+
+ .about-heading {
+   font-size: 100px;
+   font-weight: 700;
+   text-align: center;
+   margin: 0 100px 0 100px;
+ }
+
+
+ .about-row {
+   display: flex;
+   gap: 32px;
+   align-items: center;
+   /* vertically center text with image */
+   padding: 60px 10%;
+
+ }
+
+
+ .about-text h2 {
+   margin: 0 0 12px 0;
+   font-size: 20px;
+   color: var(--accent);
+   font-weight: 600;
+ }
+
+ .about-text p {
+   margin: 0 0 12px 0;
+   color: var(--muted);
+ }
+
+
+ .about-image {
+   flex: 0 0 260px;
+   /* fixed-ish image box */
+ }
+
+ .about-image img {
+   width: 100%;
+   max-width: 260px;
+   height: auto;
+   border-radius: 12px;
+   object-fit: cover;
+   box-shadow: 0 6px 20px rgba(11, 105, 255, 0.12);
+   border: 1px solid rgba(11, 105, 255, 0.06);
+ }
+
+ /* Small screens: stack columns vertical and center image */
+ @media (max-width:800px) {
+   .about-row {
+     flex-direction: column-reverse;
+     text-align: center;
+   }
+
+   .about-image {
+     flex-basis: auto;
+     width: 60%;
+     max-width: 320px
+   }
+
+   .about-text h2 {
+     text-align: center
+   }
+ }
+
+
+
+ /* Skills section */
+
+ .btn {
+   display: inline-block;
+   /* taake text ke hisaab se adjust ho */
+   padding: 12px 24px;
+   /* upar/neeche 12px, left/right 24px */
+   background-color: #126d5e;
+   /* black background */
+   color: #fff;
+   /* white text */
+   font-size: 16px;
+   font-weight: bold;
+   border: none;
+   /* border hata do */
+   border-radius: 24px;
+   /* thoda rounded corner */
+   cursor: pointer;
+   text-align: center;
+   text-decoration: none;
+   /* underline remove */
+   transition: all 0.3s ease;
+   /* smooth hover effect */
+   margin: 10px 10px 10px 10px;
+
+ }
+
+ .skil-btn {
+   text-align: center;
+   padding: 60px 10%;
+ }
+
+ .btn:hover {
+   background-color: #222;
+   /* hover pe thoda light black */
+   transform: scale(1.05);
+   /* thoda zoom-in hover pe */
+ }
+
+ /* Responsive: small screens pe font aur padding adjust */
+ @media (max-width: 600px) {
+   .btn {
+     font-size: 14px;
+     padding: 10px 20px;
+   }
+ }
