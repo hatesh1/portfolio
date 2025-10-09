@@ -1,0 +1,118 @@
+ /* Index, about, contact, project CSS file */
+ * {
+   background-color: #dfe9f3;
+ }
+
+ p,
+ a,
+ li {
+   font-family: 'Poppins', sans-serif;
+ }
+
+ .logo,
+ h1,
+ h2,
+ h3 {
+   font-family: 'Montserrat', sans-serif;
+ }
+
+ /* Logo */
+ .logo {
+   width: 60px;
+   height: 60px;
+   background: black;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   font-weight: bold;
+   border-radius: 50%;
+   cursor: pointer;
+ }
+
+ nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 60px 10%;
+ }
+
+ nav ul {
+   display: flex;
+   gap: 20px;
+   list-style: none;
+ }
+
+ a {
+   color: #0f0f0f;
+   text-decoration: none;
+ }
+
+ li:hover {
+   text-decoration: underline;
+   text-underline-offset: 5px;
+   text-decoration-color: #000000;
+   /* thoda zoom-in hover pe */
+   transform: scale(1.06);
+   transition: all 0.3s ease;
+ }
+
+ .resume-btn {
+   padding: 12px 25px;
+   background: #60ce85;
+   color: rgb(4, 4, 4);
+   text-decoration: none;
+   border-radius: 20px;
+   font-weight: bold;
+ }
+
+
+ .burger {
+   display: none;
+   /* desktop pe hidden */
+   font-size: 28px;
+   cursor: pointer;
+   color: rgb(0, 0, 0);
+   font-weight: bold;
+ }
+
+
+ /* Mobile view */
+ @media (max-width: 768px) {
+   nav ul {
+     display: none;
+     /* mobile pe hidden */
+     flex-direction: column;
+     background: rgb(143, 138, 138);
+     position: absolute;
+     top: 60px;
+     right: 100px;
+     padding: 20px 10px 20px 10px;
+     margin: 50px 0px;
+     align-items: center;
+     border-radius: 10px;
+     font-weight: bold;
+   }
+
+   nav ul.show {
+     display: flex;
+     /* burger click pe show hoga */
+   }
+
+   .burger {
+     display: block;
+     /* mobile pe show */
+   }
+ }
+
+
+ /* Resume footer */
+ .resume-footer {
+   margin-top: 20px;
+   padding-top: 15px;
+   border-top: 2px solid #020202;
+   text-align: center;
+   font-size: 14px;
+   color: #666;
+ }

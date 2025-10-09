@@ -1,0 +1,56 @@
+/* index.html-file */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 5px;
+  margin: 10px 150px 100px 150px;
+  color: rgb(0, 0, 0);
+}
+
+/* Left side text */
+.hero-left .intro {
+  font-size: 20px;
+}
+
+.hero-left .hand {
+  font-size: 26px;
+}
+
+.hero-left .name {
+  font-size: 48px;
+  margin: 0px;
+}
+
+.hero-left .desc {
+  max-width: 600px;
+}
+
+.hero-left .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #60ce85;
+  color: rgb(4, 4, 4);
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Right side image */
+.hero-right img {
+  width: auto;
+  height: 350px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-right img {
+    margin-top: 30px;
+    width: 250px;
+  }
+}

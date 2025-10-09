@@ -1,0 +1,129 @@
+
+/* About CSS */
+.about-heading, h1 {
+    font-size: 100px;
+    text-align: center;
+    margin: 0 150px;
+}
+
+.about-row {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    padding: 50px 10px 50px 10px;
+    margin: 10px 150px 10px 150px;
+}
+
+.about-text h2 {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+}
+
+.about-text p {
+    line-height: 1.5;
+}
+
+
+.about-image {
+    flex: 0 0 260px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(11, 105, 255, 0.12);
+    border: 1px solid rgba(11, 105, 255, 0.06);
+}
+
+
+/* Skills section */
+
+#Skill-heading {
+    text-align: center;
+    font-size: 48px;
+}
+
+.btn {
+    display: inline-block;
+    /* taake text ke hisaab se adjust ho */
+    padding: 12px 24px;
+    /* upar/neeche 12px, left/right 24px */
+    background-color: #126d5e;
+    /* black background */
+    color: #fff;
+    /* white text */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    /* border hata do */
+    border-radius: 24px;
+    /* thoda rounded corner */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    /* underline remove */
+    transition: all 0.3s ease;
+    /* smooth hover effect */
+    margin: 10px 10px 10px 10px;
+
+}
+
+.skil-btn {
+    text-align: center;
+    padding: 60px 10%;
+}
+
+.btn:hover {
+    background-color: #222;
+    transform: scale(1.05);
+}
+
+/* Responsive: small screens pe font aur padding adjust */
+@media (max-width: 600px) {
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .about-heading {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    .about-heading h1 {
+        font-size: 42px;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 1.2;
+        display: block;
+        width: 100%;
+    }
+
+    .about-row {
+        flex-direction: column-reverse;
+        margin: 10px 20px;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 80%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+
+    #Skill-heading {
+        font-size: 32px;
+    }
+
+    .skil-btn {
+        padding: 40px 5%;
+    }
+}
