@@ -120,8 +120,9 @@
    display: none;
    font-size: 28px;
    cursor: pointer;
-   color: #fffdfd;
+   color: #000;
    font-weight: bold;
+   z-index: 4000;
  }
 
  /* 🔹 Mobile Responsive */
@@ -216,6 +217,11 @@
    background-color: #121212;
    color: #ffffff;
  }
+
+ body.dark-mode .burger {
+  color: #fff; /* 👈 Dark mode me white */
+}
+
 
  body.dark-mode nav,
  body.dark-mode footer {
