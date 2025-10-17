@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/about.css">
 
+  <!-- Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -17,14 +22,27 @@
       <!-- Logo -->
       <div class="logo">HL</div>
 
+      <!-- Social icons -->
+      <div class="social-icons">
+        <a href="https://github.com/hatesh1" target="_blank" id="github-icon"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/hateshlakhani" target="_blank" id="insta-icon"><i
+            class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
       <!-- Menu Items -->
-      <ul>
+      <ul class="nav-list">
         <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
+        <li><a href="./about.html" class="active">About</a></li>
         <li><a href="./project.html">Projects</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a class="resume-btn" href="resume.pdf" target="_blank">Resume</a></li>
+        <li><a class="resume-btn" href="./asset/Hatesh-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a></li>
       </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
 
       <!-- Burger Button -->
       <div class="burger">☰</div>
@@ -32,74 +50,103 @@
   </header>
 
 
-  <!-- About section -->
+  <!-- Sub Nav-bar -->
+  <nav class="about-subnav" id="aboutSubnav">
+    <button class="subnav-toggle" id="subnavToggle">☰</button>
 
+    <div class="subnav-links">
+      <a href="#about" class="subnav-link"><span class="icon">👤</span>About</a>
+      <a href="#experience" class="subnav-link"><span class="icon">💼</span>Experience</a>
+      <a href="#skills" class="subnav-link"><span class="icon">🛠️</span>Skills</a>
+      <a href="#education" class="subnav-link"><span class="icon">🎓</span>Education</a>
+    </div>
+  </nav>
+
+
+  <!-- ===== ABOUT SECTION ===== -->
   <div class="about-heading">
     <h1>Turning Ideas into Scalable Software!</h1>
   </div>
 
-
-  <section class="about-row" aria-label="About me section">
-
+  <section id="about" class="about-row" aria-label="About me section">
     <div class="about-text">
       <h2>ABOUT ME</h2>
-
       <p>
-        Hi, I’m Hatesh Lakhani, a passionate Software Engineer with a strong foundation in software development and
-        a growing
+        Hi, I’m <strong>Hatesh Lakhani</strong>, a passionate Software Engineer with a strong foundation in software
+        development and a growing
         interest in modern web technologies. I graduated in 2022 with a BS in Software Engineering from Virtual
-        University
-        of Pakistan (VU).
-
+        University of Pakistan (VU).
+        <br><br>
         During my academic journey and professional experience, I have mainly worked with Java for building
-        applications and
-        completed my Final Year Project as well as a 7-month internship at Systems Limited, Karachi, where I
-        contributed to
-        enterprise-level solutions.
-
-        Currently, I’m enhancing my expertise through Saylani’s Modern Web Application Development course, focusing
-        on
+        applications and completed my Final Year Project as well as a 7-month internship at Systems Limited, Karachi,
+        where I contributed to enterprise-level solutions.
+        <br><br>
+        Currently, I’m enhancing my expertise through Saylani’s Modern Web Application Development course, focusing on
         front-end technologies to become a well-rounded full-stack developer.
       </p>
-
-
     </div>
-    <!-- RIGHT: image (use figure or div; image tag is block-level by default) -->
+
     <div class="about-image">
       <img src="./asset/images/Hatesh-Lakhani.JPG" alt="Hatesh Lakhani">
     </div>
-
   </section>
 
-  <!-- Skill section -->
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section id="experience" class="experience-section">
+    <h2>Work Experience</h2>
+    <div>
+      <h3>Internship at Systems Limited, Karachi, Pakistan</h3>
+      <p>July 2023 - May 2024</p>
+    </div>
 
-  <span id="Skill-heading">
+    <h3>Achievements / Tasks</h3>
+    <ul class="experience-list">
+      <li>Developed an E-commerce project using Java.</li>
+      <li>Designed and maintained reusable, efficient, and reliable Java code.</li>
+      <li>Developed the service layer bridging presentation and data access layers using Spring Framework.</li>
+      <li>Implemented design patterns (Singleton, Factory, Observer, Decorator, Adapter, MVC).</li>
+      <li>Maintained and updated existing modules.</li>
+      <li>Used Git for version control.</li>
+    </ul>
+  </section>
+
+  <!-- ===== EDUCATION SECTION ===== -->
+  <section id="education" class="education-section">
+    <h2>Education</h2>
+    <div>
+      <h3>BS (Software Engineering), Virtual University of Pakistan</h3>
+      <p>April 2022</p>
+      <h3>Modern Web & App Development</h3>
+      <p>Sep 2025 | Saylani Mass IT Training</p>
+      <h3>Intermediate, BISE (Board of Intermediate Secondary Education)</h3>
+      <p>April 2016</p>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="skills-section">
     <h2>Skills</h2>
-  </span>
-
-  <div class="skil-btn">
-
-
-    <button class="btn">HTML5</button>
-    <button class="btn">CSS3</button>
-    <button class="btn">JAVA</button>
-    <button class="btn">JavaScript</button>
-    <button class="btn">OOP</button>
-    <button class="btn">JSON</button>
-    <button class="btn">MySQL</button>
-    <button class="btn">DBMS</button>
-    <button class="btn">JDBC</button>
-    <button class="btn">Servlets</button>
-    <button class="btn">JSP</button>
-    <button class="btn">Spring Boot</button>
-    <button class="btn">Hibernate (ORM)</button>
-    <button class="btn">RESTful</button>
-    <button class="btn">GITHUB</button>
-    <button class="btn">POSTMAN</button>
-    <button class="btn">VS CODE</button>
-    <button class="btn">INTELLIJ</button>
-
-  </div>
+    <div class="skills-btns">
+      <button class="btn">HTML5</button>
+      <button class="btn">CSS3</button>
+      <button class="btn">JAVA</button>
+      <button class="btn">JavaScript</button>
+      <button class="btn">OOP</button>
+      <button class="btn">JSON</button>
+      <button class="btn">MySQL</button>
+      <button class="btn">DBMS</button>
+      <button class="btn">JDBC</button>
+      <button class="btn">Servlets</button>
+      <button class="btn">JSP</button>
+      <button class="btn">Spring Boot</button>
+      <button class="btn">Hibernate (ORM)</button>
+      <button class="btn">RESTful</button>
+      <button class="btn">GITHUB</button>
+      <button class="btn">POSTMAN</button>
+      <button class="btn">VS CODE</button>
+      <button class="btn">INTELLIJ</button>
+    </div>
+  </section>
 
 
 
@@ -115,12 +162,52 @@
 
 
 
-  <footer class="resume-footer" role="contentinfo" aria-label="Resume footer">
-    <p>&copy; <span id="ryear"></span> Hatesh Lakhani. All rights reserved.</p>
+  
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- 1️⃣ Quick Navigation -->
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <!-- 2️⃣ Contact Info -->
+      <div class="footer-contact">
+        <p><strong>Email:</strong> hateshlakhani9@gmail.com</p>
+        <p><strong>Location:</strong> Karachi, Pakistan</p>
+      </div>
+
+      <!-- 3️⃣ Social Icons -->
+      <div class="footer-social">
+        <a href="https://github.com/hatesh1" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- 4️⃣ Copyright -->
+      <p class="footer-copy">© 2025 Hatesh Lakhani. All Rights Reserved.</p>
+
+      <!-- 5️⃣ Back to Top Button -->
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">
+        ↑
+      </button>
+
+    </div>
   </footer>
 
   <script src="./js/main.js"></script>
+  <script src="./js/about.js"></script>
+
+
+
+
+
+
 
 </body>
-
 </html>

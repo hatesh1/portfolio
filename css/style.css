@@ -1,8 +1,6 @@
- /* Index, about, contact, project CSS file */
- * {
-   background-color: #dfe9f3;
- }
+ /* CSS Apply for all pages in this project */
 
+ /* Fonts */
  p,
  a,
  li {
@@ -16,12 +14,34 @@
    font-family: 'Montserrat', sans-serif;
  }
 
+ /* Header & Nav */
+ header {
+   width: 100%;
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+   background: #fff;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+ }
+
+ nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 18px 10%;
+   z-index: 1200;
+   /* ✅ ensure main navbar always above */
+   position: relative;
+ }
+
+
+
  /* Logo */
  .logo {
-   width: 60px;
-   height: 60px;
-   background: black;
-   color: white;
+   width: 55px;
+   height: 55px;
+   background: #000;
+   color: #fff;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -29,90 +49,313 @@
    font-weight: bold;
    border-radius: 50%;
    cursor: pointer;
+   transition: transform 0.3s ease;
  }
 
- nav {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 60px 10%;
+ .logo:hover {
+   transform: scale(1.1);
  }
 
- nav ul {
+ /* Social Icons */
+ .social-icons a {
+   font-size: 22px;
+   margin-right: 12px;
+   transition: color 0.3s ease, transform 0.3s ease;
+   color: rgb(0, 0, 0);
+ }
+
+ #github-icon {
+   color: #000;
+ }
+
+ #insta-icon {
+   color: red;
+ }
+
+ .social-icons a:hover {
+   color: #1d2021;
+   text-shadow: 0 0 8px #67bde8;
+   transform: scale(1.2);
+ }
+
+ /* Nav Links */
+ .nav-list {
    display: flex;
    gap: 20px;
    list-style: none;
+   align-items: center;
  }
 
- a {
-   color: #0f0f0f;
+ .nav-list a {
+   color: #111;
    text-decoration: none;
+   font-size: 16px;
+   font-weight: 500;
+   transition: color 0.3s ease, transform 0.3s ease;
  }
 
- li:hover {
-   text-decoration: underline;
-   text-underline-offset: 5px;
-   text-decoration-color: #000000;
-   /* thoda zoom-in hover pe */
+ .nav-list a:hover {
+   color: #0078ff;
    transform: scale(1.06);
+ }
+
+ /* Resume Button */
+ .resume-btn {
+   padding: 10px 20px;
+   background: #00aaff;
+   color: #fff !important;
+   border-radius: 8px;
+   font-weight: 600;
+   border: none;
    transition: all 0.3s ease;
  }
 
- .resume-btn {
-   padding: 12px 25px;
-   background: #60ce85;
-   color: rgb(4, 4, 4);
-   text-decoration: none;
-   border-radius: 20px;
-   font-weight: bold;
+ .resume-btn:hover {
+   background: #0078ff;
+   transform: scale(1.07);
  }
 
-
+ /* Burger Menu */
  .burger {
    display: none;
-   /* desktop pe hidden */
    font-size: 28px;
    cursor: pointer;
-   color: rgb(0, 0, 0);
+   color: #fffdfd;
    font-weight: bold;
  }
 
-
- /* Mobile view */
+ /* 🔹 Mobile Responsive */
  @media (max-width: 768px) {
-   nav ul {
-     display: none;
-     /* mobile pe hidden */
-     flex-direction: column;
-     background: rgb(143, 138, 138);
-     position: absolute;
-     top: 60px;
-     right: 100px;
-     padding: 20px 10px 20px 10px;
-     margin: 50px 0px;
-     align-items: center;
-     border-radius: 10px;
-     font-weight: bold;
+   nav {
+     padding: 18px 5%;
    }
 
-   nav ul.show {
+   .social-icons {
+     display: none;
+     /* hide top icons on small screen */
+   }
+
+   .nav-list {
+     display: none;
+     flex-direction: column;
+     background: #111;
+     position: absolute;
+     top: 70px;
+     right: 25px;
+     padding: 20px;
+     border-radius: 10px;
+     text-align: center;
+   }
+
+   .nav-list.show {
      display: flex;
-     /* burger click pe show hoga */
+   }
+
+   .nav-list li a {
+     color: #fff;
+     font-size: 18px;
+     padding: 8px 0;
+   }
+
+   .resume-btn {
+     background: #00aaff;
+     color: #fff !important;
+     margin-top: 10px;
    }
 
    .burger {
      display: block;
-     /* mobile pe show */
    }
  }
 
 
- /* Resume footer */
- .resume-footer {
-   margin-top: 20px;
-   padding-top: 15px;
-   border-top: 2px solid #020202;
+ /* Active tab highlight */
+ .nav-list a.active {
+   color: #0078ff;
+   /* blue color for active tab */
+   font-weight: 600;
+   border-bottom: 2px solid #0078ff;
+   text-underline-offset: 5px;
+ }
+
+
+
+
+ /* 🌗 Theme Toggle Button */
+ .theme-toggle {
+   background: none;
+   border: 2px solid #0078ff;
+   color: #0078ff;
+   border-radius: 50%;
+   width: 42px;
+   height: 42px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   font-size: 18px;
+   transition: all 0.3s ease;
+   margin-left: 15px;
+ }
+
+ .theme-toggle:hover {
+   background-color: #0078ff;
+   color: #fff;
+   transform: scale(1.1);
+ }
+
+ /* 🌞 Light Mode (default) */
+ body {
+   background-color: #ffffff;
+   color: #000000;
+   transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ /* 🌙 Dark Mode */
+ body.dark-mode {
+   background-color: #121212;
+   color: #ffffff;
+ }
+
+ body.dark-mode nav,
+ body.dark-mode footer {
+   background-color: #1e1e1e;
+ }
+
+ body.dark-mode a {
+   color: rgb(255, 255, 255);
+ }
+
+ body.dark-mode .resume-btn {
+   background: rgb(51, 51, 230);
+   color: #000;
+ }
+
+ body.dark-mode .theme-toggle {
+   border-color: rgb(51, 51, 230);
+   color: #ffffff;
+ }
+
+ /* Contact form, about text, etc. */
+ body.dark-mode input,
+ body.dark-mode textarea {
+   background-color: #222;
+   color: #fff;
+   border: 1px solid #444;
+ }
+
+ /* override GitHub icon color in dark mode */
+ body.dark-mode .social-icons a#github-icon,
+ body.dark-mode .social-icons a#github-icon i {
+   color: #ffffff !important;
+ }
+
+
+
+
+ /* 🌈 Modern Gradient Footer */
+ .footer {
+   background: linear-gradient(135deg, #0a0a0a, #1a1a1a 40%, #003366);
+   color: #fff;
    text-align: center;
+   padding: 50px 20px;
+   position: relative;
+   margin-top: 80px;
+   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .footer-container {
+   max-width: 1100px;
+   margin: auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 25px;
+ }
+
+ /* 🔗 Quick Navigation */
+ .footer-links a {
+   color: #ccc;
+   margin: 0 15px;
+   text-decoration: none;
+   font-size: 16px;
+   letter-spacing: 0.3px;
+   transition: color 0.3s ease, text-shadow 0.3s ease;
+ }
+
+ .footer-links a:hover {
+   color: #00aaff;
+   text-shadow: 0 0 8px #00aaff;
+ }
+
+ /* 📧 Contact Info */
+ .footer-contact p {
+   margin: 3px 0;
+   color: #bbb;
+   font-size: 15px;
+ }
+
+ /* 🌐 Social Icons */
+ .footer-social a {
+   color: #ccc;
+   font-size: 24px;
+   margin: 0 10px;
+   transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+ }
+
+ .footer-social a:hover {
+   color: #00aaff;
+   transform: scale(1.15);
+   text-shadow: 0 0 10px #00aaff;
+ }
+
+ /* © Copyright */
+ .footer-copy {
    font-size: 14px;
-   color: #666;
+   color: #aaa;
+   margin-top: 15px;
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
+   padding-top: 10px;
+ }
+
+ /* 🔼 Back to Top Button */
+ .back-to-top {
+   position: absolute;
+   right: 25px;
+   bottom: 25px;
+   background: linear-gradient(135deg, #00aaff, #0078ff);
+   color: white;
+   border: none;
+   border-radius: 50%;
+   width: 45px;
+   height: 45px;
+   cursor: pointer;
+   font-size: 20px;
+   box-shadow: 0 0 10px rgba(0, 120, 255, 0.6);
+   transition: background 0.3s ease, transform 0.3s ease;
+ }
+
+ .back-to-top:hover {
+   transform: translateY(-4px) scale(1.1);
+   background: linear-gradient(135deg, #0078ff, #00aaff);
+ }
+
+ /* 📱 Responsive Footer */
+ @media (max-width: 600px) {
+   .footer-links a {
+     display: block;
+     margin: 8px 0;
+   }
+
+   .footer {
+     padding: 40px 10px;
+   }
+
+   .back-to-top {
+     right: 15px;
+     bottom: 15px;
+     width: 40px;
+     height: 40px;
+   }
  }

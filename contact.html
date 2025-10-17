@@ -7,6 +7,11 @@
   <title>Hatesh Lakhani | Contact Page</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/contact.css">
+
+  <!-- Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -16,14 +21,27 @@
       <!-- Logo -->
       <div class="logo">HL</div>
 
+      <!-- Social icons -->
+      <div class="social-icons">
+        <a href="https://github.com/hatesh1" target="_blank" id="github-icon"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/hateshlakhani" target="_blank" id="insta-icon"><i
+            class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
       <!-- Menu Items -->
-      <ul>
+      <ul class="nav-list">
         <li><a href="./index.html">Home</a></li>
         <li><a href="./about.html">About</a></li>
         <li><a href="./project.html">Projects</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-        <li><a class="resume-btn" href="resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="./contact.html" class="active">Contact</a></li>
+        <li><a class="resume-btn" href="./asset/Hatesh-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a></li>
       </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
 
       <!-- Burger Button -->
       <div class="burger">☰</div>
@@ -31,6 +49,41 @@
   </header>
 
 
+  <!-- Contact Section -->
+  <div class="contact-heading">
+    <h1>Let’s Connect</h1>
+    <p class="contact-intro">Have a project in mind or want to collaborate? Let’s get in touch and create something
+      amazing together.</p>
+  </div>
+  <section id="contact" class="contact-section">
+
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <form class="contact-form" action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p><strong>Email:</strong> hateshlakhani9@gmail.com</p>
+        <p><strong>Phone:</strong> +92-333-2928556</p>
+        <p><strong>Location:</strong> Karachi, Pakistan</p>
+
+        <!-- Social icons -->
+        <div class="social-icons-contact">
+          <a href="https://github.com/hatesh1" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://" target="_blank"><i class="fa-brands fa-instagram" id="insta-contact"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
 
@@ -41,8 +94,42 @@
 
 
 
-  <footer class="resume-footer" role="contentinfo" aria-label="Resume footer">
-    <p>&copy; <span id="ryear"></span> Hatesh Lakhani. All rights reserved.</p>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- 1️⃣ Quick Navigation -->
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <!-- 2️⃣ Contact Info -->
+      <div class="footer-contact">
+        <p><strong>Email:</strong> hateshlakhani9@gmail.com</p>
+        <p><strong>Location:</strong> Karachi, Pakistan</p>
+      </div>
+
+      <!-- 3️⃣ Social Icons -->
+      <div class="footer-social">
+        <a href="https://github.com/hatesh1" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- 4️⃣ Copyright -->
+      <p class="footer-copy">© 2025 Hatesh Lakhani. All Rights Reserved.</p>
+
+      <!-- 5️⃣ Back to Top Button -->
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">
+        ↑
+      </button>
+
+    </div>
   </footer>
 
   <script src="./js/main.js"></script>

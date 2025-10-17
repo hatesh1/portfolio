@@ -1,0 +1,171 @@
+/* Contact Section */
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto; /* center karega horizontally */
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-heading h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-heading p {
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  font-size: 18px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 0 20px;
+}
+
+/* Contact Form */
+.contact-form {
+  flex: 1 1 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0078ff;
+}
+
+.contact-form button {
+  background-color: #0078ff;
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  font-size: 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #005fcc;
+}
+
+/* Contact Info */
+.contact-info {
+  flex: 1 1 350px;
+  text-align: left;
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.social-icons-contact {
+  margin-top: 15px;
+}
+
+.social-icons-contact a {
+  font-size: 26px;
+  margin-right: 12px;
+  color: #0078ff;
+  transition: all 0.3s ease;
+}
+
+.social-icons-contact a:hover {
+  color: #005fcc;
+  transform: scale(1.1);
+}
+
+#insta-contact:hover {
+  color: red;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-heading h1 {
+    font-size: 42px;
+  }
+
+  .contact-heading p {
+    font-size: 16px;
+    margin: 0 20px 40px;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-heading h1 {
+    font-size: 36px;
+  }
+
+  .contact-heading p {
+    font-size: 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .contact-form button {
+    font-size: 15px;
+  }
+
+  .social-icons-contact a {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 720px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px; 
+  }
+
+  .contact-info {
+    margin-top: 0;
+  }
+
+}
+
+

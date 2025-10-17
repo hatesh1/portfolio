@@ -14,23 +14,42 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+
+  <!-- Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+
 
   <header>
     <nav>
       <!-- Logo -->
       <div class="logo">HL</div>
 
+      <!-- Social icons -->
+      <div class="social-icons">
+        <a href="https://github.com/hatesh1" target="_blank" id="github-icon"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/hateshlakhani" target="_blank" id="insta-icon"><i
+            class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
       <!-- Menu Items -->
-      <ul>
-        <li><a href="./index.html">Home</a></li>
+      <ul class="nav-list">
+        <li><a href="./index.html" class="active">Home</a></li>
         <li><a href="./about.html">About</a></li>
         <li><a href="./project.html">Projects</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a class="resume-btn" href="resume.pdf" target="_blank">Resume</a></li>
+        <li><a class="resume-btn" href="./asset/Hatesh-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a></li>
       </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
 
       <!-- Burger Button -->
       <div class="burger">☰</div>
@@ -48,11 +67,11 @@
         user-friendly and efficient web applications. Always eager to
         learn and take on new challenges.
       </p>
-      <a href="#contact" class="btn">HIRE ME</a>
+      <a href="./contact.html" class="btn">HIRE ME</a>
     </div>
 
     <div class="hero-right">
-      <img src="./asset/images/software-developer.png" alt="Software Developer" />
+      <img src="./asset/images/Software-developer.png" alt="Software Developer" />
     </div>
   </div>
 
@@ -65,11 +84,56 @@
 
 
 
-  <footer class="resume-footer" role="contentinfo" aria-label="Resume footer">
-    <p>&copy; <span id="ryear"></span> Hatesh Lakhani. All rights reserved.</p>
+
+
+
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- 1️⃣ Quick Navigation -->
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <!-- 2️⃣ Contact Info -->
+      <div class="footer-contact">
+        <p><strong>Email:</strong> hateshlakhani9@gmail.com</p>
+        <p><strong>Location:</strong> Karachi, Pakistan</p>
+      </div>
+
+      <!-- 3️⃣ Social Icons -->
+      <div class="footer-social">
+        <a href="https://github.com/hatesh1" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- 4️⃣ Copyright -->
+      <p class="footer-copy">© 2025 Hatesh Lakhani. All Rights Reserved.</p>
+
+      <!-- 5️⃣ Back to Top Button -->
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">
+        ↑
+      </button>
+
+    </div>
   </footer>
 
+
   <script src="./js/main.js"></script>
+  <script src="./js/home.js"></script>
+
+
+
+
+
+
 
 </body>
 

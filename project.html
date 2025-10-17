@@ -1,32 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hatesh Lakhani | Project Page</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/project.css">
+
+
+  <!-- Font Awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
 
- <header>
-  <nav>
-    <!-- Logo -->
-    <div class="logo">HL</div>
+  <header>
+    <nav>
+      <!-- Logo -->
+      <div class="logo">HL</div>
 
-    <!-- Menu Items -->
-    <ul>
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./about.html">About</a></li>
-      <li><a href="./project.html">Projects</a></li>
-      <li><a href="./contact.html">Contact</a></li>
-      <li><a class="resume-btn" href="resume.pdf" target="_blank">Resume</a></li>
-    </ul>
+      <!-- Social icons -->
+      <div class="social-icons">
+        <a href="https://github.com/hatesh1" target="_blank" id="github-icon"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/hateshlakhani" target="_blank" id="insta-icon"><i
+            class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
 
-    <!-- Burger Button -->
-    <div class="burger">☰</div>
-  </nav>
-</header>
+      <!-- Menu Items -->
+      <ul class="nav-list">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./project.html" class="active">Projects</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a class="resume-btn" href="./asset/Hatesh-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+
+      <!-- Burger Button -->
+      <div class="burger">☰</div>
+    </nav>
+  </header>
+
+  <!-- Projects section -->
+
+  <div class="project-heading">
+    <h1>Bringing Ideas to Life Through Code</h1>
+  </div>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <img src="./asset/images/travel-toursim-card-1.jpg" alt="Travel & Tourism Management System">
+      <h3>Travel & Tourism Management System</h3>
+      <p>Developed using Java, MySQL, and Swing during my internship to manage tour bookings and packages efficiently.
+      </p>
+      <a href="https://github.com/hatesh1/Travel-And-Tourism-Managment-System" target="_blank" class="btn">View on
+        GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <img src="./asset/images/my-porfolio.jpg" alt="Pizza Webpage">
+      <h3>Personal Portfolio Website</h3>
+      <p>A responsive personal portfolio website built using HTML, CSS, and JavaScript to showcase my projects, skills,
+        and experience.</p>
+      <a href="https://github.com/hatesh1/portfolio" target="_blank" class="btn">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <img src="./asset/images/pizza-card-3.jpg" alt="Pizza Webpage">
+      <h3>Pizza Recipe Webpage</h3>
+      <p>A simple pizza recipe webpage made with HTML and CSS featuring navigation buttons and HD images.</p>
+      <a href="https://github.com/hatesh1/delicious-pizza-page" target="_blank" class="btn">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <img src="./asset/images/facebook-profile-clone.jpg" alt="Facebook">
+      <h3>Facebook Profile Clone</h3>
+      <p>A responsive clone of my Facebook profile page built using HTML, CSS, and Bootstrap to practice modern UI
+        layout and styling techniques.</p>
+      <a href="https://github.com/hatesh1/facebook-profile-clone" target="_blank" class="btn">View on GitHub</a>
+    </div>
+
+    <!-- New Project Add -->
+    <div class="project-card">
+      <img src="./asset/images/new-project.jpg" alt="image">
+      <h3>Project Title</h3>
+      <p>description explaining what this project does or what you built it with.</p>
+      <a href="" target="_blank" class="btn">View on GitHub</a>
+    </div>
+
+  </div>
 
 
 
@@ -36,11 +106,48 @@
 
 
 
-<footer class="resume-footer" role="contentinfo" aria-label="Resume footer">
-        <p>&copy; <span id="ryear"></span> Hatesh Lakhani. All rights reserved.</p>
-    </footer>
 
-<script src="./js/main.js"></script>
-  
+
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- 1️⃣ Quick Navigation -->
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <!-- 2️⃣ Contact Info -->
+      <div class="footer-contact">
+        <p><strong>Email:</strong> hateshlakhani9@gmail.com</p>
+        <p><strong>Location:</strong> Karachi, Pakistan</p>
+      </div>
+
+      <!-- 3️⃣ Social Icons -->
+      <div class="footer-social">
+        <a href="https://github.com/hatesh1" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- 4️⃣ Copyright -->
+      <p class="footer-copy">© 2025 Hatesh Lakhani. All Rights Reserved.</p>
+
+      <!-- 5️⃣ Back to Top Button -->
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top">
+        ↑
+      </button>
+
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+
 </body>
+
 </html>

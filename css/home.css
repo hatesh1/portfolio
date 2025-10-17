@@ -1,11 +1,11 @@
 /* index.html-file */
+
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 50px 5px;
   margin: 10px 150px 100px 150px;
-  color: rgb(0, 0, 0);
 }
 
 /* Left side text */
@@ -29,11 +29,20 @@
 .hero-left .btn {
   display: inline-block;
   padding: 12px 25px;
-  background: #60ce85;
-  color: rgb(4, 4, 4);
+  background: rgb(77, 77, 252);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   border-radius: 20px;
   font-weight: bold;
+}
+
+.btn:hover {
+  transform: scale(1.06);
+  transition: all 0.3s ease;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: #000000;
+  text-shadow: 0 0 8px #67bde8;
 }
 
 /* Right side image */
