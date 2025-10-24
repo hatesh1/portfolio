@@ -156,9 +156,10 @@ section {
   border: 1px solid rgba(11, 105, 255, 0.06);
 }
 
-/* ===== EXPERIENCE SECTION ===== */
+/* ===== EXPERIENCE, EDUCATION, AND SKILLS, SECTIONS  ===== */
 .experience-section,
-.education-section {
+.education-section,
+.skills-section {
   max-width: 1100px;
   margin: 60px auto;
   padding: 0 20px;
@@ -167,9 +168,9 @@ section {
 .experience-section h2,
 .education-section h2,
 .skills-section h2 {
-  font-size: 32px;
+  font-size: 24px;
   color: #0b6dff;
-  text-align: center;
+  /* text-align: center; */
   margin-bottom: 20px;
 }
 
@@ -187,17 +188,9 @@ section {
   font-size: 15px;
 }
 
-/* ===== EDUCATION SECTION ===== */
 .education-section h3 {
   font-size: 18px;
   margin-top: 15px;
-}
-
-/* ===== SKILLS SECTION ===== */
-.skills-section {
-  text-align: center;
-  margin: 60px auto;
-  padding: 0 20px;
 }
 
 .skills-btns {
@@ -228,7 +221,7 @@ section {
 @media (max-width: 900px) {
   .about-row {
     flex-direction: column-reverse;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .about-image img {
@@ -259,6 +252,8 @@ section {
   .education-section h2,
   .skills-section h2 {
     font-size: 26px;
+    /* flex-direction: column-reverse;
+    text-align: center; */
   }
 
   .about-heading h1 {

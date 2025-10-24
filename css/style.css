@@ -35,7 +35,6 @@
  }
 
 
-
  /* Logo */
  .logo {
    width: 55px;
@@ -61,7 +60,7 @@
    font-size: 22px;
    margin-right: 12px;
    transition: color 0.3s ease, transform 0.3s ease;
-   color: rgb(0, 0, 0);
+   color: rgb(48, 42, 236);
  }
 
  #github-icon {
@@ -102,17 +101,22 @@
  /* Resume Button */
  .resume-btn {
    padding: 10px 20px;
-   background: #00aaff;
-   color: #fff !important;
+   background: rgb(77, 77, 252);
+   color: #ffffff !important;
    border-radius: 8px;
    font-weight: 600;
    border: none;
    transition: all 0.3s ease;
+
  }
 
  .resume-btn:hover {
-   background: #0078ff;
    transform: scale(1.07);
+   transition: all 0.3s ease;
+   text-decoration: underline;
+   text-underline-offset: 5px;
+   text-decoration-color: #000000;
+   text-shadow: 0 0 8px #67bde8;
  }
 
  /* Burger Menu */
@@ -129,11 +133,6 @@
  @media (max-width: 768px) {
    nav {
      padding: 18px 5%;
-   }
-
-   .social-icons {
-     display: none;
-     /* hide top icons on small screen */
    }
 
    .nav-list {
@@ -167,6 +166,14 @@
    .burger {
      display: block;
    }
+ }
+
+ @media (max-width: 910px) {
+  .social-icons {
+     display: none;
+     /* hide top icons on small screen */
+   }
+  
  }
 
 
@@ -214,13 +221,15 @@
 
  /* 🌙 Dark Mode */
  body.dark-mode {
-   background-color: #121212;
+   /* background-color: #121212; */
+   background: linear-gradient(135deg, #0a0a0a, #1a1a1a 40%, #003366);
    color: #ffffff;
  }
 
  body.dark-mode .burger {
-  color: #fff; /* 👈 Dark mode me white */
-}
+   color: #fff;
+   /* 👈 Dark mode me white */
+ }
 
 
  body.dark-mode nav,
@@ -242,12 +251,24 @@
    color: #ffffff;
  }
 
+ body.dark-mode #github-contact-page{
+  color: white;
+ }
+
+ body.dark-mode .footer-contact a{
+  color: #bbb;
+ }
+
  /* Contact form, about text, etc. */
  body.dark-mode input,
  body.dark-mode textarea {
    background-color: #222;
    color: #fff;
    border: 1px solid #444;
+ }
+
+ body.dark-mode .project-card{
+  border: 1px solid #ffffff;
  }
 
  /* override GitHub icon color in dark mode */
@@ -270,6 +291,7 @@
    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
    border-top: 1px solid rgba(255, 255, 255, 0.1);
  }
+
 
  .footer-container {
    max-width: 1100px;
@@ -300,6 +322,17 @@
    margin: 3px 0;
    color: #bbb;
    font-size: 15px;
+ }
+
+ .footer-contact a{
+  color: #bbb;
+  text-decoration: none;
+ }
+
+ .footer-contact a:hover{
+   color: #00aaff;
+   text-shadow: 0 0 8px #00aaff;
+   text-decoration-color: #ffffff;
  }
 
  /* 🌐 Social Icons */

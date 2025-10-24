@@ -49,6 +49,7 @@
 .hero-right img {
   width: auto;
   height: 350px;
+  border-radius: 10px;
 }
 
 /* Responsive */
