@@ -1,15 +1,28 @@
+/* for animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Project Section Heading */
 .project-heading h1 {
     font-size: 60px;
     text-align: center;
-    margin: 50px 150px;
+    margin: 50px 20px;
+    animation: fadeInUp 0.8s ease;
 }
 
 /* Container layout */
 .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
     padding: 50px 20px;
     margin: 0 auto;
@@ -25,10 +38,7 @@
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.3s ease;
-    width: 350px;
-    /* fixed width for desktop grid */
     height: auto;
-    /* allow dynamic height */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -41,17 +51,24 @@
 /* Image */
 .project-card img {
     width: 100%;
-    height: 200px;
+    height: 250px;
+    border-radius: 10px;
     object-fit: fill;
-    border-bottom: 1px solid #ddd;
     flex-shrink: 0;
+    padding: 5px;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
 }
 
 /* Title */
 .project-card h3 {
-    padding: 15px 15px 5px;
+    padding: 20px 15px 10px;
     font-size: 20px;
-    text-align: center;
+    text-align: left;
+    margin: 0;
 }
 
 /* Description */
@@ -59,30 +76,71 @@
     padding: 0 15px 15px;
     font-size: 15px;
     line-height: 1.5;
+    color: #666666;
     flex-grow: 1;
-    text-align: center;
+    text-align: left;
+    margin: 0;
 }
 
-/* Button */
-.project-card a.btn {
-    margin: 10px auto 20px;
+/* ✅ BASIC BUTTON STYLING ADD KARO */
+.btn {
     display: inline-block;
     text-align: center;
-    padding: 10px 25px;
-    border-radius: 25px;
-    background: rgb(77, 77, 252);
+    padding: 10px 20px;
+    border-radius: 10px;
     color: #ffffff;
     font-size: 15px;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
 }
 
-.project-card a.btn:hover {
-    transform: scale(1.07);
-   transition: all 0.3s ease;
-   text-decoration: underline;
-   text-underline-offset: 5px;
-   text-decoration-color: #000000;
-   text-shadow: 0 0 8px #67bde8;
+/* ✅ BUTTON CONTAINER */
+.project-card .btn-container {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin: 15px;
+    flex-wrap: wrap;
+}
+
+/* ✅ GITHUB BUTTON */
+.btn-github {
+    background: #333;
+    color: white;
+}
+
+.btn-github:hover {
+    background: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ LIVE DEMO BUTTON */
+.btn-live {
+    background: #0078ff;
+    color: white;
+}
+
+.btn-live:hover {
+    background: #0056cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 120, 255, 0.3);
+}
+
+/* Disabled Button Style */
+.btn.disabled {
+    background: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn.disabled:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 /* Responsive layout for tablets & phones */
@@ -90,17 +148,18 @@
     .project-heading h1 {
         font-size: 42px;
         margin: 20px 0;
+        padding: 5px;
     }
 
     .projects-container {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
+        /* Mobile pe single column */
         padding: 20px;
+        gap: 20px;
     }
 
     .project-card {
-        width: 90%;
-        /* full width on mobile */
+        width: 100%;
     }
 
     .project-card img {
@@ -114,6 +173,12 @@
 
 /* Extra small screens fix */
 @media (max-width: 500px) {
+
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
     .project-card img {
         height: 150px;
     }

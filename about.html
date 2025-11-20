@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hatesh Lakhani | About Page</title>
+  <link rel="icon" type="logon-icon" href="/asset/images/title-logo.png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/about.css">
 
@@ -37,15 +38,22 @@
         <li><a href="./about.html" class="active">About</a></li>
         <li><a href="./project.html">Projects</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a class="resume-btn" href="./asset/Hatesh-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a></li>
+        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a>
+        </li>
+        <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button></li>
       </ul>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-        <i class="fa-solid fa-moon"></i>
-      </button>
+
 
 
       <!-- Burger Button -->
-      <div class="burger">☰</div>
+      <div class="burger-container">
+        <button id="theme-toggle-mobile" class="theme-toggle mobile" aria-label="Toggle Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <div class="burger">☰</div>
+      </div>
     </nav>
   </header>
 
@@ -99,7 +107,7 @@
       <p>July 2023 - May 2024</p>
     </div>
 
-    <h3>Achievements / Tasks</h3>
+    <h3 id="achievements-tasks">Achievements / Tasks</h3>
     <ul class="experience-list">
       <li>Developed an E-commerce project using Java.</li>
       <li>Designed and maintained reusable, efficient, and reliable Java code.</li>
@@ -123,46 +131,88 @@
     </div>
   </section>
 
+
   <!-- ===== SKILLS SECTION ===== -->
   <section id="skills" class="skills-section">
     <h2>SKILLS</h2>
-    <div class="skills-btns">
-      <button class="btn">HTML5</button>
-      <button class="btn">CSS3</button>
-      <button class="btn">JAVA</button>
-      <button class="btn">JavaScript</button>
-      <button class="btn">OOP</button>
-      <button class="btn">JSON</button>
-      <button class="btn">MySQL</button>
-      <button class="btn">DBMS</button>
-      <button class="btn">JDBC</button>
-      <button class="btn">Servlets</button>
-      <button class="btn">JSP</button>
-      <button class="btn">Spring Boot</button>
-      <button class="btn">Hibernate (ORM)</button>
-      <button class="btn">RESTful</button>
-      <button class="btn">GITHUB</button>
-      <button class="btn">POSTMAN</button>
-      <button class="btn">VS CODE</button>
-      <button class="btn">INTELLIJ</button>
+    <div class="tech-stack-grid">
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/w3_html5-icon.svg" alt="HTML5"></div>
+        <span>HTML5</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/w3_css-icon~old.svg" alt="CSS3"></div>
+        <span>CSS3</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/java-icon.svg" alt="Java"></div>
+        <span>Java</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/javascript-icon.svg" alt="JavaScript"></div>
+        <span>JavaScript</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/getbootstrap-icon.svg" alt="bootstrap"></div>
+        <span>Bootstrap</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/oop.jpg" alt="OOP"></div>
+        <span>OOP</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/json-ar21~bgwhite.svg" alt="Json"></div>
+        <span>JSON</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/apache_tomcat-icon.svg" alt="Apache-tomcat"></div>
+        <span>Apache Tomcat</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/database01.svg" alt="dbms"></div>
+        <span>DBMS</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/mysql-official.svg" alt="MySQL"></div>
+        <span>MySQL</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/springio-icon.svg" alt="Spring Boot"></div>
+        <span>Spring Boot</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/hibernate-icon.svg" alt="Hibernate"></div>
+        <span>Hibernate</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/api-svgrepo-com.svg" alt="api"></div>
+        <span>Rest API</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/git-scm-icon.svg" alt="git"></div>
+        <span>Git</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/github-icon.svg" alt="GitHub"></div>
+        <span>GitHub</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/getpostman-icon.svg" alt="Postman"></div>
+        <span>Postman</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/visualstudio_code-icon.svg" alt="VS Code"></div>
+        <span>VS Code</span>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon"><img src="./asset/skill/intellij-idea.svg" alt="IntelliJ"></div>
+        <span>IntelliJ</span>
+      </div>
     </div>
   </section>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
   <!-- Footer Section -->
   <footer class="footer">
     <div class="footer-container">
@@ -187,6 +237,7 @@
         <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/923332928556" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
       </div>
 
       <!-- 4️⃣ Copyright -->
@@ -204,10 +255,6 @@
   <script src="./js/about.js"></script>
 
 
-
-
-
-
-
 </body>
+
 </html>

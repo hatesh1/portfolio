@@ -1,66 +1,125 @@
-/* index.html-file */
+/* for animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* index.html-file */
 .hero {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 50px 5px;
-  margin: 10px 150px 100px 150px;
+  justify-content: space-between;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 80px 10% 60px;
 }
 
-/* Left side text */
-.hero-left .intro {
-  font-size: 20px;
-}
-
-.hero-left .hand {
-  font-size: 26px;
-}
-
-.hero-left .name {
-  font-size: 48px;
-  margin: 0px;
-}
-
-.hero-left .desc {
+.hero-left {
+  flex: 1;
   max-width: 600px;
 }
 
-.hero-left .btn {
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+.intro {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.hand {
+  font-size: 24px;
+}
+
+.name {
+  font-size: 48px;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.role {
+  font-size: 24px;
+  color: #0078ff;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.desc {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.btn {
   display: inline-block;
-  padding: 12px 25px;
-  background: rgb(77, 77, 252);
-  color: rgb(255, 255, 255);
+  padding: 12px 30px;
+  background: #0078ff;
+  color: white;
   text-decoration: none;
-  border-radius: 20px;
-  font-weight: bold;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin: 5px;
 }
 
 .btn:hover {
-  transform: scale(1.06);
-  transition: all 0.3s ease;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  text-decoration-color: #000000;
-  text-shadow: 0 0 8px #67bde8;
+  background: #0056cc;
+  transform: translateY(-2px);
 }
 
-/* Right side image */
-.hero-right img {
-  width: auto;
-  height: 350px;
-  border-radius: 10px;
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #0078ff;
+  color: #0078ff;
+}
+
+.btn-secondary:hover {
+  background: #0078ff;
+  color: white;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
+    padding: 40px 5%;
     text-align: center;
   }
 
-  .hero-right img {
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-right {
     margin-top: 30px;
-    width: 250px;
+  }
+
+  .name {
+    font-size: 36px;
+  }
+
+  .role {
+    font-size: 20px;
   }
 }

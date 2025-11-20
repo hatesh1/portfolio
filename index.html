@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hatesh Lakhani</title>
+  <link rel="icon" type="logon-icon" href="/asset/images/title-logo.png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/home.css">
 
@@ -22,7 +23,6 @@
 </head>
 
 <body>
-
 
   <header>
     <nav>
@@ -44,15 +44,22 @@
         <li><a href="./about.html">About</a></li>
         <li><a href="./project.html">Projects</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a class="resume-btn" href="./asset/Hatesh-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a></li>
+        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a>
+        </li>
+        <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button></li>
       </ul>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-        <i class="fa-solid fa-moon"></i>
-      </button>
 
 
-      <!-- Burger Button -->
-      <div class="burger">☰</div>
+
+      <!-- Burger Button - isme theme toggle add karo -->
+      <div class="burger-container">
+        <button id="theme-toggle-mobile" class="theme-toggle mobile" aria-label="Toggle Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <div class="burger">☰</div>
+      </div>
     </nav>
   </header>
 
@@ -68,6 +75,7 @@
         learn and take on new challenges.
       </p>
       <a href="./contact.html" class="btn">HIRE ME</a>
+      <a href="./project.html" class="btn btn-secondary">VIEW WORK</a>
     </div>
 
     <div class="hero-right">
@@ -75,15 +83,7 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
+  
 
   <!-- Footer Section -->
   <footer class="footer">
@@ -109,6 +109,7 @@
         <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/923332928556" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
       </div>
 
       <!-- 4️⃣ Copyright -->
@@ -125,12 +126,6 @@
 
   <script src="./js/main.js"></script>
   <script src="./js/home.js"></script>
-
-
-
-
-
-
 
 </body>
 

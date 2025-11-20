@@ -1,23 +1,43 @@
+/* for animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Contact Section */
 .contact-section {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  /* center karega horizontally */
   padding: 20px;
   text-align: center;
+}
+
+.contact-heading {
+  padding: 0 20px;
 }
 
 .contact-heading h1 {
   font-size: 50px;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 30px auto 15px;
+  padding: 0 15px;
+  animation: fadeInUp 0.8s ease;
 }
 
 .contact-heading p {
   line-height: 1.6;
   max-width: 700px;
-  margin: 0 auto 60px;
+  margin: 0 auto 40px;
   font-size: 18px;
+  padding: 0 20px;
+  animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .contact-container {
@@ -25,8 +45,9 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 30px;
   padding: 0 20px;
+  margin: 0 auto;
 }
 
 /* Contact Form */
@@ -35,6 +56,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-width: 100%;
 }
 
 .contact-form input,
@@ -45,6 +67,7 @@
   font-size: 16px;
   outline: none;
   transition: border-color 0.3s ease;
+  width: 100%;
 }
 
 .contact-form input:focus,
@@ -61,26 +84,33 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
 .contact-form button:hover {
   background-color: #005fcc;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 120, 255, 0.3);
 }
 
 /* Contact Info */
 .contact-info {
   flex: 1 1 350px;
   text-align: left;
+  max-width: 100%;
 }
 
 .contact-info h3 {
   font-size: 24px;
   margin-bottom: 15px;
+  margin-top: 0;
 }
 
 .contact-info p {
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  padding: 5px;
 }
 
 .contact-info a {
@@ -88,35 +118,42 @@
   text-decoration: none;
 }
 
-.contact-info a:hover {
-  color: #007bff;
-  text-shadow: 0 0 8px #67bde8;
+.fa-linkedin:hover,
+.fa-facebook:hover {
+  color: #1877f2;
 }
 
 .social-icons-contact {
   margin-top: 15px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
 }
 
 .social-icons-contact a {
-  font-size: 26px;
-  margin-right: 12px;
+  font-size: 28px;
   color: #000000;
-  transition: all 0.3s ease;
 }
 
 
-
 .social-icons-contact a:hover {
-  color: #005fcc;
   transform: scale(1.1);
 }
 
 #insta-contact:hover {
-  color: red;
+  color: #E4405F;
+}
+
+#whatsApp-contact:hover {
+  color: #25D366;
 }
 
 #github-contact-page {
   color: black;
+}
+
+#github-contact-page:hover {
+  color: #6e5494;
 }
 
 /* ✅ Responsive Design */
@@ -125,34 +162,73 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 40px;
+    padding: 0 15px;
   }
 
   .contact-info {
     text-align: center;
+    flex: none;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
   }
 
   .contact-heading h1 {
     font-size: 42px;
+    margin: 40px auto 15px;
+  }
+
+  .contact-heading p {
+    font-size: 1em;
+    padding: 0 15px;
+    margin-bottom: 40px;
+  }
+
+  .contact-form {
+    flex: none;
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .social-icons-contact {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-heading h1 {
+    font-size: 36px;
+    margin: 30px auto 15px;
   }
 
   .contact-heading p {
     font-size: 16px;
-    margin: 0 20px 40px;
+    padding: 0 10px;
+    margin-bottom: 30px;
   }
 
-  .contact-form,
-  .contact-info {
-    width: 90%;
+  .contact-container {
+    gap: 40px;
+    padding: 0 10px;
   }
+
+  .contact-section {
+    padding: 15px 10px;
+  }
+
 }
 
 @media (max-width: 500px) {
   .contact-heading h1 {
-    font-size: 36px;
+    font-size: 32px;
+    margin: 25px auto 10px;
   }
 
   .contact-heading p {
-    font-size: 15px;
+    font-size: 14px;
+    padding: 0 5px;
+    margin-bottom: 25px;
   }
 
   .contact-form input,
@@ -167,20 +243,36 @@
 
   .social-icons-contact a {
     font-size: 24px;
-    margin-right: 8px;
+  }
+
+  .contact-info h3 {
+    font-size: 20px;
+  }
+
+  .contact-info p {
+    font-size: 14px;
+  }
+
+  .contact-container {
+    gap: 40px;
+    padding: 0 5px;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 400px) {
+  .contact-heading h1 {
+    font-size: 28px;
+  }
+
+  .contact-heading p {
+    font-size: 13px;
+  }
+
   .contact-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
+    gap: 40px;
   }
 
   .contact-info {
-    margin-top: 0;
+    margin-top: -5px;
   }
-
 }

@@ -13,27 +13,56 @@ burger.addEventListener('click', () => {
 });
 
 
-
-// 🌗 Theme Toggle
+// 🌗 Theme Toggle - Updated for Mobile
 const toggleBtn = document.getElementById('theme-toggle');
+const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
 const body = document.body;
+
+// Theme toggle function
+function toggleTheme() {
+  body.classList.toggle('dark-mode');
+
+  const isDarkMode = body.classList.contains('dark-mode');
+  const sunIcon = '<i class="fa-solid fa-sun"></i>';
+  const moonIcon = '<i class="fa-solid fa-moon"></i>';
+
+  if (isDarkMode) {
+    // Update both buttons
+    if (toggleBtn) toggleBtn.innerHTML = sunIcon;
+    if (toggleBtnMobile) toggleBtnMobile.innerHTML = sunIcon;
+    localStorage.setItem('theme', 'dark');
+  } else {
+    // Update both buttons
+    if (toggleBtn) toggleBtn.innerHTML = moonIcon;
+    if (toggleBtnMobile) toggleBtnMobile.innerHTML = moonIcon;
+    localStorage.setItem('theme', 'light');
+  }
+}
 
 // Check for saved theme in localStorage
 if (localStorage.getItem('theme') === 'dark') {
   body.classList.add('dark-mode');
-  toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  const sunIcon = '<i class="fa-solid fa-sun"></i>';
+  if (toggleBtn) toggleBtn.innerHTML = sunIcon;
+  if (toggleBtnMobile) toggleBtnMobile.innerHTML = sunIcon;
 }
 
-// Toggle theme on click
-toggleBtn.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
+// Add event listeners to both theme toggle buttons
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', toggleTheme);
+}
 
-  if (body.classList.contains('dark-mode')) {
-    toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-    localStorage.setItem('theme', 'dark');
-  } else {
-    toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-    localStorage.setItem('theme', 'light');
+if (toggleBtnMobile) {
+  toggleBtnMobile.addEventListener('click', function (e) {
+    e.stopPropagation(); // Prevent burger menu toggle when clicking theme button
+    toggleTheme();
+  });
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.nav-list') && !e.target.closest('.burger') && navList.classList.contains('show')) {
+    navList.classList.remove('show');
   }
 });
 

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hatesh Lakhani | Contact Page</title>
+  <link rel="icon" type="logon-icon" href="/asset/images/title-logo.png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/contact.css">
 
@@ -36,15 +37,22 @@
         <li><a href="./about.html">About</a></li>
         <li><a href="./project.html">Projects</a></li>
         <li><a href="./contact.html" class="active">Contact</a></li>
-        <li><a class="resume-btn" href="./asset/Hatesh-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a></li>
+        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a>
+        </li>
+        <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button></li>
       </ul>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-        <i class="fa-solid fa-moon"></i>
-      </button>
+
 
 
       <!-- Burger Button -->
-      <div class="burger">☰</div>
+      <div class="burger-container">
+        <button id="theme-toggle-mobile" class="theme-toggle mobile" aria-label="Toggle Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <div class="burger">☰</div>
+      </div>
     </nav>
   </header>
 
@@ -59,38 +67,39 @@
 
     <div class="contact-container">
       <!-- Contact Form -->
-      <form class="contact-form" action="#" method="post">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required pattern="[A-Za-z ]{3,40}">
+        <input type="email" name="email" placeholder="Your Email" required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required minlength="10" maxlength="500"></textarea>
         <button type="submit" class="btn">Send Message</button>
       </form>
 
       <!-- Contact Info -->
       <div class="contact-info">
         <h3>Get in Touch</h3>
-        <p><strong>Email: </strong><a href="mailto:hateshlakhani9@gmail.com">hateshlakhani9@gmail.com</a></p>
-        <p><strong>Phone: </strong><a href="tel:+923332928556">+92-333-2928556</a></p>
-        <p><strong>Location:</strong> Karachi, Pakistan</p>
+        <p><i class="fa-solid fa-envelope"></i> <strong>Email: </strong><a
+            href="mailto:hateshlakhani9@gmail.com">hateshlakhani9@gmail.com</a></p>
+        <p><i class="fa-solid fa-mobile"></i> <strong>Phone: </strong><a href="tel:+923332928556">+92-333-2928556</a>
+        </p>
+        <p><i class="fa-solid fa-location-dot"></i> <strong>Location:</strong> Karachi, Pakistan</p>
 
         <!-- Social icons -->
         <div class="social-icons-contact">
-          <a href="https://www.github.com/hatesh1" target="_blank"><i class="fa-brands fa-github" id="github-contact-page"></i></a>
+          <a href="https://www.github.com/hatesh1" target="_blank"><i class="fa-brands fa-github"
+              id="github-contact-page"></i></a>
           <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://www.facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fa-brands fa-instagram" id="insta-contact"></i></a>
+          <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fa-brands fa-instagram"
+              id="insta-contact"></i></a>
+          <a href="https://wa.me/923332928556" target="_blank"><i class="fa-brands fa-square-whatsapp"
+              id="whatsApp-contact"></i></a>
         </div>
 
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
 
 
 
@@ -119,6 +128,7 @@
         <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/923332928556" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
       </div>
 
       <!-- 4️⃣ Copyright -->

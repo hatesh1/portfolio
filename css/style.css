@@ -1,4 +1,9 @@
  /* CSS Apply for all pages in this project */
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
 
  /* Fonts */
  p,
@@ -20,8 +25,7 @@
    position: sticky;
    top: 0;
    z-index: 1000;
-   background: #fff;
-   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+   background: #ffffff;
  }
 
  nav {
@@ -30,10 +34,10 @@
    align-items: center;
    padding: 18px 10%;
    z-index: 1200;
-   /* ✅ ensure main navbar always above */
    position: relative;
+   max-width: 100%;
+   overflow-x: hidden;
  }
-
 
  /* Logo */
  .logo {
@@ -51,15 +55,10 @@
    transition: transform 0.3s ease;
  }
 
- .logo:hover {
-   transform: scale(1.1);
- }
-
  /* Social Icons */
  .social-icons a {
    font-size: 22px;
    margin-right: 12px;
-   transition: color 0.3s ease, transform 0.3s ease;
    color: rgb(48, 42, 236);
  }
 
@@ -69,12 +68,6 @@
 
  #insta-icon {
    color: red;
- }
-
- .social-icons a:hover {
-   color: #1d2021;
-   text-shadow: 0 0 8px #67bde8;
-   transform: scale(1.2);
  }
 
  /* Nav Links */
@@ -89,34 +82,42 @@
    color: #111;
    text-decoration: none;
    font-size: 16px;
-   font-weight: 500;
-   transition: color 0.3s ease, transform 0.3s ease;
- }
-
- .nav-list a:hover {
-   color: #0078ff;
-   transform: scale(1.06);
+   font-weight: 550;
  }
 
  /* Resume Button */
  .resume-btn {
    padding: 10px 20px;
-   background: rgb(77, 77, 252);
+   background: linear-gradient(135deg, #0078ff, #0056cc);
+   box-shadow: 0 4px 15px rgba(0, 120, 255, 0.3);
    color: #ffffff !important;
    border-radius: 8px;
    font-weight: 600;
    border: none;
    transition: all 0.3s ease;
+   display: inline-block;
+ }
 
+ .logo:hover {
+   transform: scale(1.1);
+ }
+
+ .social-icons a:hover {
+   color: #1d2021;
+   text-shadow: 0 0 8px #67bde8;
+ }
+
+ .nav-list a:hover {
+   color: #0078ff;
  }
 
  .resume-btn:hover {
-   transform: scale(1.07);
-   transition: all 0.3s ease;
+   transform: scale(1.08) translateY(-2px);
    text-decoration: underline;
    text-underline-offset: 5px;
    text-decoration-color: #000000;
    text-shadow: 0 0 8px #67bde8;
+   box-shadow: 0 6px 20px rgba(0, 120, 255, 0.4);
  }
 
  /* Burger Menu */
@@ -129,64 +130,13 @@
    z-index: 4000;
  }
 
- /* 🔹 Mobile Responsive */
- @media (max-width: 768px) {
-   nav {
-     padding: 18px 5%;
-   }
-
-   .nav-list {
-     display: none;
-     flex-direction: column;
-     background: #111;
-     position: absolute;
-     top: 70px;
-     right: 25px;
-     padding: 20px;
-     border-radius: 10px;
-     text-align: center;
-   }
-
-   .nav-list.show {
-     display: flex;
-   }
-
-   .nav-list li a {
-     color: #fff;
-     font-size: 18px;
-     padding: 8px 0;
-   }
-
-   .resume-btn {
-     background: #00aaff;
-     color: #fff !important;
-     margin-top: 10px;
-   }
-
-   .burger {
-     display: block;
-   }
- }
-
- @media (max-width: 910px) {
-  .social-icons {
-     display: none;
-     /* hide top icons on small screen */
-   }
-  
- }
-
-
  /* Active tab highlight */
  .nav-list a.active {
    color: #0078ff;
-   /* blue color for active tab */
    font-weight: 600;
    border-bottom: 2px solid #0078ff;
    text-underline-offset: 5px;
  }
-
-
 
 
  /* 🌗 Theme Toggle Button */
@@ -203,13 +153,26 @@
    cursor: pointer;
    font-size: 18px;
    transition: all 0.3s ease;
-   margin-left: 15px;
  }
 
  .theme-toggle:hover {
-   background-color: #0078ff;
+   background-color: #000000;
    color: #fff;
    transform: scale(1.1);
+ }
+
+ /* Mobile theme toggle - initially hidden */
+ .theme-toggle.mobile {
+   display: none;
+   margin-left: 0;
+   margin-right: 10px;
+ }
+
+ /* Burger container for proper alignment */
+ .burger-container {
+   display: none;
+   align-items: center;
+   gap: 10px;
  }
 
  /* 🌞 Light Mode (default) */
@@ -217,20 +180,23 @@
    background-color: #ffffff;
    color: #000000;
    transition: background-color 0.3s ease, color 0.3s ease;
+   overflow-x: hidden;
+   /* Prevent horizontal scroll */
  }
 
  /* 🌙 Dark Mode */
  body.dark-mode {
-   /* background-color: #121212; */
    background: linear-gradient(135deg, #0a0a0a, #1a1a1a 40%, #003366);
    color: #ffffff;
  }
 
  body.dark-mode .burger {
    color: #fff;
-   /* 👈 Dark mode me white */
  }
 
+ body.dark-mode .logo {
+   border: 2px solid #ffffff;
+ }
 
  body.dark-mode nav,
  body.dark-mode footer {
@@ -246,18 +212,32 @@
    color: #000;
  }
 
+ body.dark-mode .tech-item {
+   background-color: #000;
+   color: #ffffff;
+ }
+
+ body.dark-mode .tech-item span {
+   color: #ffffff;
+ }
+
+ body.dark-mode .project-card p {
+   color: rgb(216, 216, 216);
+ }
+
  body.dark-mode .theme-toggle {
    border-color: rgb(51, 51, 230);
    color: #ffffff;
  }
 
- body.dark-mode #github-contact-page{
-  color: white;
+ body.dark-mode #github-contact-page {
+   color: white;
  }
 
- body.dark-mode .footer-contact a{
-  color: #bbb;
+ body.dark-mode .footer-contact a {
+   color: #bbb;
  }
+
 
  /* Contact form, about text, etc. */
  body.dark-mode input,
@@ -267,8 +247,8 @@
    border: 1px solid #444;
  }
 
- body.dark-mode .project-card{
-  border: 1px solid #ffffff;
+ body.dark-mode .project-card {
+   border: 1px solid #ffffff;
  }
 
  /* override GitHub icon color in dark mode */
@@ -276,8 +256,6 @@
  body.dark-mode .social-icons a#github-icon i {
    color: #ffffff !important;
  }
-
-
 
 
  /* 🌈 Modern Gradient Footer */
@@ -324,12 +302,12 @@
    font-size: 15px;
  }
 
- .footer-contact a{
-  color: #bbb;
-  text-decoration: none;
+ .footer-contact a {
+   color: #bbb;
+   text-decoration: none;
  }
 
- .footer-contact a:hover{
+ .footer-contact a:hover {
    color: #00aaff;
    text-shadow: 0 0 8px #00aaff;
    text-decoration-color: #ffffff;
@@ -378,6 +356,72 @@
  .back-to-top:hover {
    transform: translateY(-4px) scale(1.1);
    background: linear-gradient(135deg, #0078ff, #00aaff);
+ }
+
+
+ /* 🔹 Mobile Responsive */
+ @media (max-width: 768px) {
+   nav {
+     padding: 18px 5%;
+   }
+
+   /* Desktop theme toggle hide karo mobile pe */
+   .theme-toggle-li {
+     display: none;
+   }
+
+   /* Burger container show karo */
+   .burger-container {
+     display: flex;
+     align-items: center;
+   }
+
+   .nav-list {
+     display: none;
+     flex-direction: column;
+     background: #111;
+     position: fixed;
+     top: 70px;
+     right: 5%;
+     padding: 20px;
+     border-radius: 10px;
+     text-align: center;
+     width: 200px;
+     z-index: 2000;
+     border: 2px solid #ffffff;
+   }
+
+   .nav-list.show {
+     display: flex;
+   }
+
+   .nav-list li a {
+     color: #fff;
+     font-size: 18px;
+   }
+
+   .resume-btn {
+     background: #00aaff;
+     color: #fff !important;
+     margin-top: 10px;
+   }
+
+   .burger {
+     display: block;
+     font-size: 28px;
+     cursor: pointer;
+     color: #000;
+     font-weight: bold;
+     z-index: 4000;
+   }
+ }
+
+ @media (max-width: 910px) {
+   .social-icons {
+     display: none;
+     /* hide top icons on small screen */
+   }
+
  }
 
  /* 📱 Responsive Footer */

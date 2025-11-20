@@ -5,10 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hatesh Lakhani | Project Page</title>
+  <link rel="icon" type="logon-icon" href="/asset/images/title-logo.png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/project.css">
-
-
   <!-- Font Awesome link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -37,15 +36,22 @@
         <li><a href="./about.html">About</a></li>
         <li><a href="./project.html" class="active">Projects</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a class="resume-btn" href="./asset/Hatesh-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a></li>
+        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank"><Strong>RESUME</Strong></a>
+        </li>
+        <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button></li>
       </ul>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-        <i class="fa-solid fa-moon"></i>
-      </button>
+
 
 
       <!-- Burger Button -->
-      <div class="burger">☰</div>
+      <div class="burger-container">
+        <button id="theme-toggle-mobile" class="theme-toggle mobile" aria-label="Toggle Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <div class="burger">☰</div>
+      </div>
     </nav>
   </header>
 
@@ -56,56 +62,77 @@
   </div>
 
   <div class="projects-container">
+    <!-- card 1 -->
+    <div class="project-card">
+      <img src="./asset/images/coffee.png" alt="Modern Cafe Website">
+      <h3>Modern Cafe Website</h3>
+      <p>A responsive coffee shop website with multiple pages - Home, About, Menu, and Contact. Built with pure HTML,
+        CSS, and basic JavaScript for smooth scrolling.
+      </p>
+      <div class="btn-container">
+        <a href="https://github.com/hatesh1/coffee-website" target="_blank" class="btn btn-github">Code <i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://hatesh1.github.io/coffee-website" target="_blank" class="btn btn-live">Live Demo <i
+            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+    </div>
+
+    <!-- card 2 -->
+    <div class="project-card">
+      <img src="./asset/images/portfolio.png" alt="Pizza Webpage">
+      <h3>Personal Portfolio Website</h3>
+      <p>A responsive personal portfolio website built using HTML, CSS, and JavaScript to showcase my projects, skills,
+        and experience.</p>
+      <div class="btn-container">
+        <a href="https://github.com/hatesh1/portfolio" target="_blank" class="btn btn-github">Code <i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://hatesh1.github.io/portfolio" target="_blank" class="btn btn-live">Live Demo <i
+            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+    </div>
+
+    <!-- card 3 -->
+    <div class="project-card">
+      <img src="./asset/images/pizza-card-3.jpg" alt="Pizza Webpage">
+      <h3>Pizza Recipe Webpage</h3>
+      <p>A simple pizza recipe webpage made with HTML and CSS featuring navigation buttons and HD images.</p>
+      <div class="btn-container">
+        <a href="https://github.com/hatesh1/delicious-pizza-page" target="_blank" class="btn btn-github">Code <i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://hatesh1.github.io/delicious-pizza-page/" target="_blank" class="btn btn-live">Live Demo <i
+            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+    </div>
+
+    <!-- card 4 -->
     <div class="project-card">
       <img src="./asset/images/travel-toursim-card-1.jpg" alt="Travel & Tourism Management System">
       <h3>Travel & Tourism Management System</h3>
       <p>Developed using Java, MySQL, and Swing during my internship to manage tour bookings and packages efficiently.
       </p>
-      <a href="https://github.com/hatesh1/Travel-And-Tourism-Managment-System" target="_blank" class="btn">View on
-        GitHub</a>
+      <div class="btn-container">
+        <a href="https://github.com/hatesh1/Travel-And-Tourism-Managment-System" target="_blank"
+          class="btn btn-github">Code <i class="fa-brands fa-github"></i></a>
+        <a href="https://github.com/hatesh1/Travel-And-Tourism-Managment-System" target="_blank"
+          class="btn btn-live disabled">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
     </div>
 
-    <div class="project-card">
-      <img src="./asset/images/my-porfolio.jpg" alt="Pizza Webpage">
-      <h3>Personal Portfolio Website</h3>
-      <p>A responsive personal portfolio website built using HTML, CSS, and JavaScript to showcase my projects, skills,
-        and experience.</p>
-      <a href="https://github.com/hatesh1/portfolio" target="_blank" class="btn">View on GitHub</a>
-    </div>
-
-    <div class="project-card">
-      <img src="./asset/images/pizza-card-3.jpg" alt="Pizza Webpage">
-      <h3>Pizza Recipe Webpage</h3>
-      <p>A simple pizza recipe webpage made with HTML and CSS featuring navigation buttons and HD images.</p>
-      <a href="https://github.com/hatesh1/delicious-pizza-page" target="_blank" class="btn">View on GitHub</a>
-    </div>
-
+    <!-- card 5 -->
     <div class="project-card">
       <img src="./asset/images/facebook-profile-clone.jpg" alt="Facebook">
       <h3>Facebook Profile Clone</h3>
       <p>A responsive clone of my Facebook profile page built using HTML, CSS, and Bootstrap to practice modern UI
         layout and styling techniques.</p>
-      <a href="https://github.com/hatesh1/facebook-profile-clone" target="_blank" class="btn">View on GitHub</a>
-    </div>
-
-    <!-- New Project Add -->
-    <div class="project-card">
-      <img src="./asset/images/new-project.jpg" alt="image">
-      <h3>Project Title</h3>
-      <p>description explaining what this project does or what you built it with.</p>
-      <a href="" target="_blank" class="btn">View on GitHub</a>
+      <div class="btn-container">
+        <a href="https://github.com/hatesh1/facebook-profile-clone" target="_blank" class="btn btn-github">Code <i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://hatesh1.github.io/facebook-profile-clone/" target="_blank" class="btn btn-live">Live Demo <i
+            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
     </div>
 
   </div>
-  
-
-
-
-
-
-
-
-
 
 
 
@@ -134,6 +161,7 @@
         <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/923332928556" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
       </div>
 
       <!-- 4️⃣ Copyright -->
