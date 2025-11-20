@@ -149,7 +149,7 @@ section {
 .experience-section,
 .education-section,
 .skills-section {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 60px auto;
   padding: 0 20px;
 }
@@ -161,6 +161,10 @@ section {
   color: #0b6dff;
   /* text-align: center; */
   margin-bottom: 20px;
+}
+
+.about-experience-p {
+  padding-top: 10px;
 }
 
 .experience-section h3 {
@@ -183,7 +187,7 @@ section {
 
 .education-section h3 {
   font-size: 18px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .tech-stack-grid {
@@ -249,7 +253,8 @@ section {
   .about-row {
     flex-direction: column-reverse;
     gap: 30px;
-    text-align: center;
+    text-align: start;
+    margin: 0;
   }
 
   .about-image img {
@@ -264,6 +269,16 @@ section {
   .about-heading h1 {
     font-size: 42px;
     margin: 20px auto;
+  }
+
+  .about-text h2 {
+    text-align: center;
+  }
+
+  .experience-section h2,
+  .education-section h2,
+  .skills-section h2 {
+    text-align: center;
   }
 
   .about-text p {
