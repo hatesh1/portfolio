@@ -338,7 +338,7 @@
 
  /* 🔼 Back to Top Button */
  .back-to-top {
-   position: absolute;
+   position: fixed;
    right: 25px;
    bottom: 25px;
    background: linear-gradient(135deg, #00aaff, #0078ff);
@@ -350,7 +350,14 @@
    cursor: pointer;
    font-size: 20px;
    box-shadow: 0 0 10px rgba(0, 120, 255, 0.6);
-   transition: background 0.3s ease, transform 0.3s ease;
+   z-index: 1000;
+   opacity: 0;
+   visibility: hidden;
+ }
+
+ .back-to-top.show {
+   opacity: 1;
+   visibility: visible;
  }
 
  .back-to-top:hover {
@@ -359,7 +366,28 @@
  }
 
 
- /* 🔹 Mobile Responsive */
+ /* 📱 Responsive Footer */
+ @media (max-width: 600px) {
+   .footer-links a {
+     display: block;
+     margin: 8px 0;
+   }
+
+   .footer {
+     padding: 40px 10px;
+   }
+
+   .back-to-top {
+     right: 15px;
+     bottom: 15px;
+     width: 40px;
+     height: 40px;
+     font-size: 18px;
+   }
+ }
+
+
+ /* 🔹 Tablet Responsive */
  @media (max-width: 768px) {
    nav {
      padding: 18px 5%;
@@ -420,25 +448,5 @@
    .social-icons {
      display: none;
      /* hide top icons on small screen */
-   }
-
- }
-
- /* 📱 Responsive Footer */
- @media (max-width: 600px) {
-   .footer-links a {
-     display: block;
-     margin: 8px 0;
-   }
-
-   .footer {
-     padding: 40px 10px;
-   }
-
-   .back-to-top {
-     right: 15px;
-     bottom: 15px;
-     width: 40px;
-     height: 40px;
    }
  }

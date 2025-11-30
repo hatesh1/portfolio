@@ -66,3 +66,48 @@ document.addEventListener('click', (e) => {
   }
 });
 
+
+
+// Back to Top and bottom Button Functionality
+const backToTopBtn = document.getElementById('backToTop');
+let lastScrollPosition = 0;
+let isScrollingDown = true;
+
+if (backToTopBtn) {
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    // Scroll direction detect karo
+    isScrollingDown = currentScroll > lastScrollPosition;
+    lastScrollPosition = currentScroll;
+    
+    // Show/hide logic
+    if (currentScroll > 100 && currentScroll < (document.body.scrollHeight - window.innerHeight - 100)) {
+      backToTopBtn.classList.add('show');
+      
+      // Change button behavior based on scroll direction
+      if (isScrollingDown) {
+        backToTopBtn.innerHTML = '⬆'; // Top pe jaane ke liye
+        backToTopBtn.title = "Go to Top";
+      } else {
+        backToTopBtn.innerHTML = '⬇'; // Bottom pe jaane ke liye  
+        backToTopBtn.title = "Go to Bottom";
+      }
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  // Click handler
+  backToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    if (isScrollingDown) {
+      // Top pe jao
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Bottom pe jao
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  });
+}
