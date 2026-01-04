@@ -5,109 +5,79 @@
 // if (el) el.textContent = y;
 
 
-const burger = document.querySelector('.burger');
-const navList = document.querySelector('.nav-list');
+document.addEventListener('DOMContentLoaded', () => {
 
-burger.addEventListener('click', () => {
-  navList.classList.toggle('show');
-});
+  const burger = document.querySelector('.burger');
+  const navMenu = document.getElementById('nav-menu');
+  const closeBtn = document.querySelector('.menu-close');
 
-
-// 🌗 Theme Toggle - Updated for Mobile
-const toggleBtn = document.getElementById('theme-toggle');
-const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
-const body = document.body;
-
-// Theme toggle function
-function toggleTheme() {
-  body.classList.toggle('dark-mode');
-
-  const isDarkMode = body.classList.contains('dark-mode');
-  const sunIcon = '<i class="fa-solid fa-sun"></i>';
-  const moonIcon = '<i class="fa-solid fa-moon"></i>';
-
-  if (isDarkMode) {
-    // Update both buttons
-    if (toggleBtn) toggleBtn.innerHTML = sunIcon;
-    if (toggleBtnMobile) toggleBtnMobile.innerHTML = sunIcon;
-    localStorage.setItem('theme', 'dark');
-  } else {
-    // Update both buttons
-    if (toggleBtn) toggleBtn.innerHTML = moonIcon;
-    if (toggleBtnMobile) toggleBtnMobile.innerHTML = moonIcon;
-    localStorage.setItem('theme', 'light');
-  }
-}
-
-// Check for saved theme in localStorage
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark-mode');
-  const sunIcon = '<i class="fa-solid fa-sun"></i>';
-  if (toggleBtn) toggleBtn.innerHTML = sunIcon;
-  if (toggleBtnMobile) toggleBtnMobile.innerHTML = sunIcon;
-}
-
-// Add event listeners to both theme toggle buttons
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', toggleTheme);
-}
-
-if (toggleBtnMobile) {
-  toggleBtnMobile.addEventListener('click', function (e) {
-    e.stopPropagation(); // Prevent burger menu toggle when clicking theme button
-    toggleTheme();
+  // Open Menu
+  burger.addEventListener('click', () => {
+    navMenu.classList.add('active');
+    document.getElementById('overlay').classList.add('active');
   });
-}
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.nav-list') && !e.target.closest('.burger') && navList.classList.contains('show')) {
-    navList.classList.remove('show');
+  // Close Menu
+  closeBtn.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    document.getElementById('overlay').classList.remove('active');
+  });
+
+  const overlay = document.getElementById('overlay');
+
+  overlay.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  document.querySelectorAll('.nav-list a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      const overlay = document.getElementById('overlay');
+      if (overlay) overlay.classList.remove('active');
+    });
+  });
+
+  // 2. Theme Toggle Logic (Clean & Dual Button Support)
+  const themeBtns = document.querySelectorAll('.theme-toggle'); // Dono buttons ko aik saath select karein
+  const body = document.body;
+
+  function updateIcons(isDark) {
+    const icon = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+    themeBtns.forEach(btn => btn.innerHTML = icon);
   }
-});
 
+  // Check saved theme
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    updateIcons(true);
+  }
 
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcons(isDark);
+    });
+  });
 
-// Back to Top and bottom Button Functionality
-const backToTopBtn = document.getElementById('backToTop');
-let lastScrollPosition = 0;
-let isScrollingDown = true;
-
-if (backToTopBtn) {
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    // Scroll direction detect karo
-    isScrollingDown = currentScroll > lastScrollPosition;
-    lastScrollPosition = currentScroll;
-    
-    // Show/hide logic
-    if (currentScroll > 100 && currentScroll < (document.body.scrollHeight - window.innerHeight - 100)) {
-      backToTopBtn.classList.add('show');
-      
-      // Change button behavior based on scroll direction
-      if (isScrollingDown) {
-        backToTopBtn.innerHTML = '⬆'; // Top pe jaane ke liye
-        backToTopBtn.title = "Go to Top";
+  const backToTopBtn = document.getElementById('backToTop');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('show');
+        backToTopBtn.innerHTML = '↑'; // Hamesha Up arrow rakhein
+        backToTopBtn.title = "Back to Top";
       } else {
-        backToTopBtn.innerHTML = '⬇'; // Bottom pe jaane ke liye  
-        backToTopBtn.title = "Go to Bottom";
+        backToTopBtn.classList.remove('show');
       }
-    } else {
-      backToTopBtn.classList.remove('show');
-    }
-  });
+    });
 
-  // Click handler
-  backToTopBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    
-    if (isScrollingDown) {
-      // Top pe jao
+    backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      // Bottom pe jao
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-  });
-}
+    });
+  }
+
+});

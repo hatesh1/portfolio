@@ -1,24 +1,29 @@
-/* for animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* Apply CSS Home page (index.html-file) */
+
+/* Floating Animation Definition */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
   }
 }
 
-/* index.html-file */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 50px;
   max-width: 100%;
+  min-height: calc(100vh - 80px);
+  padding: 50px 10%;
   overflow: hidden;
-  padding: 80px 10% 60px;
 }
 
 .hero-left {
@@ -34,14 +39,20 @@
 }
 
 .hero-right img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
-  border-radius: 15px;
-  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  animation: float 4s ease-in-out infinite;
+}
+
+body.dark-mode .hero-right img {
+  filter: brightness(0.9);
 }
 
 .intro {
-  font-size: 18px;
+  font-size: 20px;
+  letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
@@ -69,6 +80,17 @@
   animation: fadeInUp 0.8s ease 0.4s both;
 }
 
+/* hero section btn */
+.hero-btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
 .btn {
   display: inline-block;
   padding: 12px 30px;
@@ -78,7 +100,6 @@
   border-radius: 5px;
   font-weight: 600;
   transition: all 0.3s ease;
-  margin: 5px;
 }
 
 .btn:hover {
@@ -97,6 +118,31 @@
   color: white;
 }
 
+/* Hero Socials Container */
+.hero-socials {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+.hero-socials a {
+  font-size: 24px;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.hero-socials a:hover {
+  color: #0078ff;
+  transform: translateY(-3px);
+}
+
+/* Dark Mode ke liye icons color white */
+body.dark-mode .hero-socials a {
+  color: #ffffff;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
@@ -107,12 +153,7 @@
 
   .hero-left,
   .hero-right {
-    width: 100%;
     max-width: 100%;
-  }
-
-  .hero-right {
-    margin-top: 30px;
   }
 
   .name {
@@ -121,5 +162,41 @@
 
   .role {
     font-size: 20px;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .hero-socials {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 300px) {
+  .hero-content h1 {
+    font-size: 24px !important;
+  }
+
+  .hero-content h2 {
+    font-size: 16px !important;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-align: center;
   }
 }
