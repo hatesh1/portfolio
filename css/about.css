@@ -86,13 +86,13 @@ body.dark-mode .about-text p {
 }
 
 .mySlides {
-  display: none; /* By default saari hidden hongi */
+  display: none; 
 }
 
 .mySlides img {
   width: 100%;
-  height: 450px; /* Fixed height taake slider hile na */
-  object-fit: cover; /* Image stretch nahi hogi */
+  height: 450px; 
+  object-fit: cover; 
   vertical-align: middle;
 }
 
@@ -126,7 +126,7 @@ body.dark-mode .about-text p {
 
 .dot.active {
   background-color: #0078ff;
-  width: 25px; /* Pill shape for active dot */
+  width: 25px; 
   border-radius: 10px;
 }
 
