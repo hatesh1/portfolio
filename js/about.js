@@ -1,20 +1,5 @@
-/* --- 1. Scroll Reveal Logic --- */
-function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 100;
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
-    }
-  }
-}
-window.addEventListener("scroll", reveal);
-reveal(); // Initial check
 
-
-/* --- 2. Slider with WebP Pre-loading Logic --- */
+/* --- Slider with WebP Pre-loading Logic --- */
 let slideIndex = 0;
 let slideTimer;
 const wrapper = document.getElementById("sliderWrapper");
@@ -22,18 +7,18 @@ const slides = document.getElementsByClassName("mySlides");
 const dots = document.getElementsByClassName("dot");
 const allImages = wrapper.querySelectorAll("img");
 
-// Logic: Check karein ke saari images download ho gayi hain
+// Logic: check all images are loaded before starting slider
 let imagesLoadedCount = 0;
 
 function checkAndStartSlider() {
   imagesLoadedCount++;
-  // Jab saari images (e.g. 3 images) load ho jayengi tab slider start hoga
+  // when all images are loaded, start the slider
   if (imagesLoadedCount === allImages.length) {
     showSlides();
   }
 }
 
-// Har image par check lagayenge
+// Check each image's load status
 allImages.forEach((img) => {
   if (img.complete) {
     checkAndStartSlider();
@@ -44,27 +29,26 @@ allImages.forEach((img) => {
 });
 
 function showSlides() {
-  // Purana timer saaf karein taake double slides na chalein
   clearTimeout(slideTimer);
-  
+
   for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
-  
+
   slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1 }    
-  
+  if (slideIndex > slides.length) { slideIndex = 1 }
+
   for (let i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  
-  if(slides[slideIndex-1]) {
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
+
+  if (slides[slideIndex - 1]) {
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
   }
-  
-  // 3 second baad agli slide
-  slideTimer = setTimeout(showSlides, 3000); 
+
+  //  After 3 seconds, next slide show
+  slideTimer = setTimeout(showSlides, 3000);
 }
 
 /* --- 3. Mouse Hover Controls --- */
@@ -73,6 +57,6 @@ wrapper.addEventListener("mouseenter", () => {
 });
 
 wrapper.addEventListener("mouseleave", () => {
-  // Mouse hatne ke 1 second baad dubara automatic shuru
+  // leave mouse, resume after 1 second
   slideTimer = setTimeout(showSlides, 1000);
 });

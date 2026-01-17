@@ -22,6 +22,12 @@
     rel="stylesheet">
   <!-- Font Awesome link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  </script>
 </head>
 
 <body>
@@ -40,12 +46,10 @@
         <li><a href="./about.html" class="active">About</a></li>
         <li><a href="./project.html">Projects</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank">RESUME</a></li>
-        <li>
-          <button id="theme-toggle" class="theme-toggle">
-            <i class="fa-solid fa-moon"></i>
-          </button>
+        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank" id="resumeBtn" rel="noopener"
+            aria-label="My Resume">RESUME</a>
         </li>
+        <li><button id="theme-toggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button></li>
       </ul>
 
       <!-- Burger Button -->
@@ -53,7 +57,7 @@
         <button id="theme-toggle-mobile" class="theme-toggle mobile" aria-label="Toggle Dark Mode">
           <i class="fa-solid fa-moon"></i>
         </button>
-        <div class="burger">☰</div>
+        <button class="burger" aria-label="Open Menu">☰</button>
       </div>
     </nav>
   </header>
@@ -61,7 +65,7 @@
 
   <!-- ABOUT SECTION -->
   <div class="about-heading">
-    <h1>Turning Ideas into Scalable Software!</h1>
+    <h1 class="section-heading">Turning Ideas into Scalable Software!</h1>
   </div>
 
   <section id="about" class="about-row reveal" aria-label="About me section">
@@ -69,83 +73,74 @@
       <h2>ABOUT ME</h2>
       <p>
         Hi, I’m <strong>Hatesh Lakhani</strong>, a passionate Software Engineer with a strong foundation in software
-        development and a growing
-        interest in modern web technologies. I graduated in 2022 with a BS in Software Engineering from Virtual
-        University of Pakistan (VU).
-        <br><br>
+        development and a growing interest in modern web technologies. I graduated in 2022 with a BS in Software
+        Engineering from Virtual University of Pakistan (VU).
+      </p>
+      <p>
         During my academic journey and professional experience, I have mainly worked with Java for building
         applications and completed my Final Year Project as well as a 7-month internship at Systems Limited, Karachi,
         where I contributed to enterprise-level solutions.
-        <br><br>
+      </p>
+      <p>
         Currently, I’m enhancing my expertise through Saylani’s Modern Web Application Development course, focusing on
         front-end technologies to become a well-rounded full-stack developer.
       </p>
     </div>
 
-    <!-- <div class="about-image">
-      <img src="./asset/images/hateshl.jpg" alt="Hatesh Lakhani">
-    </div> -->
-
     <div class="about-image">
-  <div class="slider-wrapper" id="sliderWrapper">
-    <div class="mySlides fade">
-      <img src="./asset/images/hatesh1.webp" fetchpriority="high" alt="Hatesh Lakhani 1">
-    </div>
-    <div class="mySlides fade">
-      <img src="./asset/images/hatesh2.webp" alt="Hatesh Lakhani 2">
-    </div>
-    <div class="mySlides fade">
-      <img src="./asset/images/hatesh3.webp" alt="Hatesh Lakhani 3">
-    </div>
+      <div class="slider-wrapper" id="sliderWrapper">
+        <div class="mySlides fade">
+          <img src="./asset/images/hatesh1.webp" fetchpriority="high" alt="Hatesh Lakhani 1">
+        </div>
+        <div class="mySlides fade">
+          <img src="./asset/images/hatesh2.webp" alt="Hatesh Lakhani 2">
+        </div>
+        <div class="mySlides fade">
+          <img src="./asset/images/hatesh3.webp" alt="Hatesh Lakhani 3">
+        </div>
+        <div class="mySlides fade">
+          <img src="./asset/images/hatesh4.webp" alt="Hatesh Lakhani 4">
+        </div>
+        <div class="mySlides fade">
+          <img src="./asset/images/hatesh5.webp" alt="Hatesh Lakhani 5">
+        </div>
+        <div class="mySlides fade">
+          <img src="./asset/images/hatesh6.webp" alt="Hatesh Lakhani 6">
+        </div>
+        <div class="mySlides fade">
+          <img src="./asset/images/hatesh7.webp" alt="Hatesh Lakhani 7">
+        </div>
+        <div class="mySlides fade">
+          <img src="./asset/images/hatesh8.webp" alt="Hatesh Lakhani 8">
+        </div>
+        <div class="mySlides fade">
+          <img src="./asset/images/hatesh9.webp" alt="Hatesh Lakhani 9">
+        </div>
 
-    <div class="mySlides fade">
-      <img src="./asset/images/hatesh4.webp" alt="Hatesh Lakhani 4">
+        <div class="dot-container">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
     </div>
-
-    <div class="mySlides fade">
-      <img src="./asset/images/hatesh5.webp" alt="Hatesh Lakhani 5">
-    </div>
-
-    <div class="mySlides fade">
-      <img src="./asset/images/hatesh6.webp" alt="Hatesh Lakhani 6">
-    </div>
-
-    <div class="mySlides fade">
-      <img src="./asset/images/hatesh7.webp" alt="Hatesh Lakhani 7">
-    </div>
-
-    <div class="mySlides fade">
-      <img src="./asset/images/hatesh8.webp" alt="Hatesh Lakhani 8">
-    </div>
-
-    <div class="mySlides fade">
-      <img src="./asset/images/hatesh9.webp" alt="Hatesh Lakhani 9">
-    </div>
-
-    <div class="dot-container">
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span>
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span>
-    </div>
-  </div>
-</div>
   </section>
 
   <!-- EXPERIENCE SECTION -->
   <section id="experience" class="experience-section reveal">
     <h2>WORK EXPERIENCE</h2>
-    <div>
+    <div class="experience-header">
       <h3>Internship at Systems Limited, Karachi, Pakistan</h3>
-      <p class="about-experience-p">July 2023 - May 2024</p>
+      <p class="experience-date">July 2023 - May 2024</p>
     </div>
 
-    <h3 id="achievements-tasks">Achievements / Tasks</h3>
+    <h3 class="achievements-heading">Achievements / Tasks</h3>
     <ul class="experience-list">
       <li>Developed an E-commerce project using Java.</li>
       <li>Designed and maintained reusable, efficient, and reliable Java code.</li>
@@ -159,16 +154,21 @@
   <!-- EDUCATION SECTION -->
   <section id="education" class="education-section reveal">
     <h2>EDUCATION</h2>
-    <div>
-      <h3>BS (Software Engineering), Virtual University of Pakistan</h3>
-      <p class="about-experience-p">April 2022</p>
-      <h3>Modern Web & App Development</h3>
-      <p class="about-experience-p">Sep 2025 | Saylani Mass IT Training</p>
-      <h3>Intermediate, BISE (Board of Intermediate Secondary Education)</h3>
-      <p class="about-experience-p">April 2016</p>
+    <div class="education-list">
+      <div class="education-item">
+        <h3>BS (Software Engineering), Virtual University of Pakistan</h3>
+        <p class="education-date">April 2022</p>
+      </div>
+      <div class="education-item">
+        <h3>Modern Web & App Development</h3>
+        <p class="education-date">Sep 2025 | Saylani Mass IT Training</p>
+      </div>
+      <div class="education-item">
+        <h3>Intermediate, BISE (Board of Intermediate Secondary Education)</h3>
+        <p class="education-date">April 2016</p>
+      </div>
     </div>
   </section>
-
 
   <!-- SKILLS SECTION -->
   <section id="skills" class="skills-section reveal">
@@ -191,7 +191,7 @@
         <span>JavaScript</span>
       </div>
       <div class="tech-item">
-        <div class="tech-icon"><img src="./asset/skill/getbootstrap-icon.svg" alt="bootstrap"></div>
+        <div class="tech-icon"><img src="./asset/skill/getbootstrap-icon.svg" alt="Bootstrap"></div>
         <span>Bootstrap</span>
       </div>
       <div class="tech-item">
@@ -199,15 +199,15 @@
         <span>OOP</span>
       </div>
       <div class="tech-item">
-        <div class="tech-icon"><img src="./asset/skill/json-ar21~bgwhite.svg" alt="Json"></div>
+        <div class="tech-icon"><img src="./asset/skill/json-ar21~bgwhite.svg" alt="JSON"></div>
         <span>JSON</span>
       </div>
       <div class="tech-item">
-        <div class="tech-icon"><img src="./asset/skill/apache_tomcat-icon.svg" alt="Apache-tomcat"></div>
+        <div class="tech-icon"><img src="./asset/skill/apache_tomcat-icon.svg" alt="Apache Tomcat"></div>
         <span>Apache Tomcat</span>
       </div>
       <div class="tech-item">
-        <div class="tech-icon"><img src="./asset/skill/database01.svg" alt="dbms"></div>
+        <div class="tech-icon"><img src="./asset/skill/database01.svg" alt="DBMS"></div>
         <span>DBMS</span>
       </div>
       <div class="tech-item">
@@ -223,11 +223,11 @@
         <span>Hibernate</span>
       </div>
       <div class="tech-item">
-        <div class="tech-icon"><img src="./asset/skill/api-svgrepo-com.svg" alt="api"></div>
-        <span>Rest API</span>
+        <div class="tech-icon"><img src="./asset/skill/api-svgrepo-com.svg" alt="REST API"></div>
+        <span>REST API</span>
       </div>
       <div class="tech-item">
-        <div class="tech-icon"><img src="./asset/skill/git-scm-icon.svg" alt="git"></div>
+        <div class="tech-icon"><img src="./asset/skill/git-scm-icon.svg" alt="Git"></div>
         <span>Git</span>
       </div>
       <div class="tech-item">
@@ -250,10 +250,8 @@
   </section>
 
   <!-- Back to Top Button -->
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" id="backToTop">
-    ↑
-  </button>
-
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" id="backToTop"
+    aria-label="Back to top">↑</button>
 
   <!-- Footer Section -->
   <footer class="footer">
@@ -277,24 +275,28 @@
       <div class="footer-col">
         <h3>Get In Touch</h3>
         <p><i class="fas fa-envelope"></i>
-          <a href="mailto:hateshlakhani9@gmail.com" style="text-decoration: none; color: inherit;">
+          <a href="mailto:hateshlakhani9@gmail.com" rel="noopener" aria-label="GitHub">
             hateshlakhani9@gmail.com</a>
         </p>
 
         <p><i class="fas fa-map-marker-alt"></i>
-          <a href="https://www.google.com/maps/search/Karachi,+Pakistan" target="_blank"
-            style="text-decoration: none; color: inherit;">
+          <a href="https://www.google.com/maps/search/Karachi,+Pakistan" target="_blank" rel="noopener"
+            aria-label="Location">
             Karachi, Pakistan
           </a>
         </p>
 
         <div class="footer-social">
-          <a href="https://github.com/hatesh1" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/923332928556?text=Hi%20Hatesh,%20I%20saw%20your%20portfolio!" target="_blank"><i
-              class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://github.com/hatesh1" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/923332928556?text=Hi%20Hatesh,%20I%20saw%20your%20portfolio!" target="_blank"
+            rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/hateshlakhani" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/hateshlakhani" target="_blank" rel="noopener" aria-label="Facebook"><i
+              class="fab fa-facebook"></i></a>
         </div>
       </div>
     </div>

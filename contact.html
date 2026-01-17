@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Hatesh Lakhani</title>
-  <!-- Meta Tags (For SEO) -->
   <meta name="description"
     content="Hatesh Lakhani - Professional Software Engineer specializing in Web Development, Java, and Spring Boot. View my portfolio and projects.">
   <meta name="keywords"
@@ -14,14 +13,17 @@
   <link rel="icon" type="image/png" href="asset/images/title-logo.png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/contact.css">
-  <!-- Google fonts links -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500&display=swap"
     rel="stylesheet">
-  <!-- Font Awesome link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  </script>
 </head>
 
 <body>
@@ -40,12 +42,10 @@
         <li><a href="./about.html">About</a></li>
         <li><a href="./project.html">Projects</a></li>
         <li><a href="./contact.html" class="active">Contact</a></li>
-        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank">RESUME</a></li>
-        <li>
-          <button id="theme-toggle" class="theme-toggle">
-            <i class="fa-solid fa-moon"></i>
-          </button>
+        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank" id="resumeBtn" rel="noopener"
+            aria-label="My Resume">RESUME</a>
         </li>
+        <li><button id="theme-toggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button></li>
       </ul>
 
       <!-- Burger Button -->
@@ -53,62 +53,336 @@
         <button id="theme-toggle-mobile" class="theme-toggle mobile" aria-label="Toggle Dark Mode">
           <i class="fa-solid fa-moon"></i>
         </button>
-        <div class="burger">☰</div>
+        <button class="burger" aria-label="Open Menu">☰</button>
       </div>
     </nav>
   </header>
 
+  <section class="contact-page-container">
+    <div class="contact-heading">
+      <h1 class="section-heading">Get in Touch</h1>
+      <p>Have a project in mind or want to collaborate? Let's get in touch and create something amazing together.</p>
+    </div>
 
-  <!-- Contact Section -->
-  <div class="contact-heading">
-    <h1>Let’s Connect</h1>
-    <p class="contact-intro">Have a project in mind or want to collaborate? Let’s get in touch and create something
-      amazing together.</p>
-  </div>
-  <section id="contact" class="contact-section">
+    <!-- First Row: Form + Contact Info -->
+    <div class="contact-first-row">
+      <!-- Left Column: Form -->
+      <div class="form-column reveal">
+        <div class="form-section">
+          <h2 class="section-title">Send Message</h2>
+          <form class="contact-form" id="contactForm">
+            <input type="hidden" name="subject" value="New Portfolio Message">
+            <div class="form-group">
+              <input type="text" name="from_name" id="name" placeholder="Your Name" required autofocus>
+              <div class="validation-feedback">
+                <span class="valid-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="error-icon"><i class="fa-solid fa-exclamation-circle"></i></span>
+                <span class="error-message">Name must be 3-40 letters only</span>
+              </div>
+            </div>
 
-    <div class="contact-container">
-      <!-- Contact Form -->
-      <form class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required pattern="[A-Za-z ]{3,40}">
-        <input type="email" name="email" placeholder="Your Email" required
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-        <input type="tel" name="phone" placeholder="Your Phone Number" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required minlength="10" maxlength="500"></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+            <div class="form-group">
+              <input type="email" name="from_email" id="email" placeholder="Your Email" required>
+              <div class="validation-feedback">
+                <span class="valid-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="error-icon"><i class="fa-solid fa-exclamation-circle"></i></span>
+                <span class="error-message">Please enter a valid email address</span>
+              </div>
+            </div>
 
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <h3>Get in Touch</h3>
-        <p><i class="fa-solid fa-envelope"></i> <strong>Email: </strong><a
-            href="mailto:hateshlakhani9@gmail.com">hateshlakhani9@gmail.com</a></p>
-        <p><i class="fa-solid fa-mobile"></i> <strong>Phone: </strong><a href="tel:+923332928556">+92-333-2928556</a>
-        </p>
-        <p><i class="fa-solid fa-location-dot"></i> <strong>Location:</strong> Karachi, Pakistan</p>
+            <div class="form-group">
+              <input type="tel" name="from_phone" id="phone" placeholder="Your Phone Number">
+              <div class="validation-feedback">
+                <span class="valid-icon"><i class="fa-solid fa-check"></i></span>
+                <span class="error-icon"><i class="fa-solid fa-exclamation-circle"></i></span>
+                <span class="error-message">Please enter a valid phone number</span>
+              </div>
+            </div>
 
-        <!-- Social icons -->
-        <div class="social-icons-contact">
-          <a href="https://www.github.com/hatesh1" target="_blank"><i class="fa-brands fa-github"
-              id="github-contact-page"></i></a>
-          <a href="https://www.linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fa-brands fa-instagram"
-              id="insta-contact"></i></a>
-          <a href="https://wa.me/923332928556" target="_blank"><i class="fa-brands fa-square-whatsapp"
-              id="whatsApp-contact"></i></a>
+            <div class="form-group">
+              <textarea name="message" id="message" rows="5" placeholder="Your Message" required minlength="10"
+                maxlength="500"></textarea>
+              <div class="textarea-footer">
+                <div class="validation-feedback">
+                  <span class="valid-icon"><i class="fa-solid fa-check"></i></span>
+                  <span class="error-icon"><i class="fa-solid fa-exclamation-circle"></i></span>
+                  <span class="error-message">Message must be 10-500 characters</span>
+                </div>
+                <div class="char-counter">
+                  <span id="charCount">0</span>/500
+                </div>
+              </div>
+            </div>
+
+            <div class="form-status">
+              <div class="status-message success-message">
+                <i class="fa-solid fa-check-circle"></i>
+                <span>All fields are valid! You can send the message.</span>
+              </div>
+              <div class="status-message error-message">
+                <i class="fa-solid fa-exclamation-triangle"></i>
+                <span>Please fix the errors above before sending.</span>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+          </form>
         </div>
+      </div>
 
+      <!-- Right Column: Email, Phone, Location -->
+      <div class="info-column reveal">
+        <div class="contact-info-section">
+          <h2 class="section-title">Contact Info</h2>
+          <div class="contact-details">
+            <!-- Email Card -->
+            <div class="contact-card email-card">
+              <div class="card-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="card-content">
+                <h4>Email</h4>
+                <p class="card-detail">hateshlakhani9@gmail.com</p>
+                <div class="card-actions">
+                  <button onclick="copyToClipboard('hateshlakhani9@gmail.com')" class="action-btn" type="button">
+                    <i class="fa-solid fa-copy"></i> Copy
+                  </button>
+                  <a href="mailto:hateshlakhani9@gmail.com" class="action-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Send Mail
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="contact-card phone-card">
+              <div class="card-icon">
+                <i class="fa-solid fa-mobile"></i>
+              </div>
+              <div class="card-content">
+                <h4>Phone</h4>
+                <p class="card-detail">+92-333-2928556</p>
+                <div class="card-actions">
+                  <button onclick="copyToClipboard('+923332928556')" class="action-btn" type="button">
+                    <i class="fa-solid fa-copy"></i> Copy
+                  </button>
+                  <a href="tel:+923332928556" class="action-btn">
+                    <i class="fa-solid fa-phone"></i> Call
+                  </a>
+                  <a href="https://wa.me/923332928556" target="_blank" class="action-btn whatsapp-btn">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="contact-card location-card">
+              <div class="card-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="card-content">
+                <h4>Location</h4>
+                <p class="card-detail">Karachi, Pakistan</p>
+                <div class="card-actions">
+                  <button onclick="copyToClipboard('Karachi, Pakistan')" class="action-btn" type="button">
+                    <i class="fa-solid fa-copy"></i> Copy
+                  </button>
+                  <a href="https://maps.google.com/maps?q=Karachi+Pakistan" target="_blank" class="action-btn">
+                    <i class="fa-solid fa-map"></i> View Map
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row: Social Icons -->
+    <div class="social-row reveal">
+      <div class="social-section">
+        <h3 class="section-subtitle">Connect With Me</h3>
+        <div class="social-icons">
+          <a href="https://github.com/hatesh1" target="_blank" class="social-icon github">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank" class="social-icon linkedin">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://facebook.com/hateshlakhani" target="_blank" class="social-icon facebook">
+            <i class="fab fa-facebook"></i>
+            <span>Facebook</span>
+          </a>
+          <a href="https://instagram.com/hateshlakhani" target="_blank" class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+          <a href="https://wa.me/923332928556" target="_blank" class="social-icon whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Row: Working Hours -->
+    <div class="hours-row reveal">
+      <div class="hours-section">
+        <h3 class="section-subtitle"><i class="fas fa-clock"></i> Working Hours</h3>
+        <div class="hours-grid">
+          <div class="hour-card">
+            <h4>Monday - Friday</h4>
+            <p>9:00 AM - 6:00 PM</p>
+            <span class="hour-status open">Open</span>
+          </div>
+          <div class="hour-card">
+            <h4>Saturday</h4>
+            <p>10:00 AM - 2:00 PM</p>
+            <span class="hour-status open">Open</span>
+          </div>
+          <div class="hour-card">
+            <h4>Sunday</h4>
+            <p>Closed</p>
+            <span class="hour-status closed">Closed</span>
+          </div>
+        </div>
+        <p class="timezone-note">All times are in Pakistan Standard Time (UTC+5)</p>
+      </div>
+    </div>
+
+    <!-- Fourth Row: Best Way to Reach -->
+    <div class="best-way-row reveal">
+      <div class="best-way-section">
+        <h3 class="section-subtitle"><i class="fas fa-bullhorn"></i> Best Way to Reach Me</h3>
+        <div class="best-way-content">
+          <div class="way-card whatsapp-card">
+            <div class="way-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="way-info">
+              <h4>WhatsApp</h4>
+              <p>Fastest response time</p>
+              <small>Usually within 2-4 hours</small>
+            </div>
+            <div class="way-badge best">Best</div>
+          </div>
+
+          <div class="way-card email-card">
+            <div class="way-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="way-info">
+              <h4>Email</h4>
+              <p>For detailed discussions</p>
+              <small>Response within 24 hours</small>
+            </div>
+            <div class="way-badge good">Good</div>
+          </div>
+
+          <div class="way-card phone-card">
+            <div class="way-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="way-info">
+              <h4>Phone Call</h4>
+              <p>For urgent matters</p>
+              <small>Please message first</small>
+            </div>
+            <div class="way-badge available">Available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fifth Row: Map -->
+    <div class="map-row reveal">
+      <div class="map-section">
+        <h3 class="section-subtitle"><i class="fas fa-map-marked-alt"></i> Find Me Here</h3>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14476.353386001242!2d67.0864049!3d24.917218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f0208bfd6b1%3A0x997b1a02c2570822!2sGulshan-e-Iqbal%20Town%2C%20Karachi!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Karachi, Pakistan Location">
+          </iframe>
+        </div>
+        <div class="map-actions">
+          <a href="https://maps.google.com/maps?q=Karachi+Pakistan" target="_blank" class="map-btn">
+            <i class="fas fa-external-link-alt"></i> Open in Google Maps
+          </a>
+          <button onclick="copyLocation()" class="map-btn">
+            <i class="fas fa-copy"></i> Copy Address
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sixth Row: FAQ Section -->
+    <div class="faq-row reveal">
+      <div class="faq-section">
+        <h2 class="faq-title">Common Questions</h2>
+        <p class="faq-subtitle">Quick answers to things you might be wondering</p>
+
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How soon will you respond to my message?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>I usually respond within <strong>24 hours</strong> on business days. For WhatsApp, response is
+                typically within <strong>2-4 hours</strong>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What should I mention in my message for a better response?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>To help me understand your needs, please mention:
+                <br>• <strong>Project Idea:</strong> A brief overview of what you want to build.
+                <br>• <strong>Features:</strong> Any specific functionalities you need.
+                <br>• <strong>Timeline:</strong> When do you need the project to be completed?
+                <br>• <strong>Budget:</strong> An approximate range helps in planning the best solution for you.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you work with international clients?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! I work with clients worldwide and can adjust to your timezone for meetings.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What are your working hours?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Monday-Friday:</strong> 9:00 AM - 6:00 PM (PKT)<br>
+                <strong>Saturday:</strong> 10:00 AM - 2:00 PM (PKT)<br>
+                <strong>Sunday:</strong> Closed
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
 
   <!-- Back to Top Button -->
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" id="backToTop">
-    ↑
-  </button>
-
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" id="backToTop"
+    aria-label="Back to top">↑</button>
 
   <!-- Footer Section -->
   <footer class="footer">
@@ -132,24 +406,28 @@
       <div class="footer-col">
         <h3>Get In Touch</h3>
         <p><i class="fas fa-envelope"></i>
-          <a href="mailto:hateshlakhani9@gmail.com" style="text-decoration: none; color: inherit;">
+          <a href="mailto:hateshlakhani9@gmail.com" rel="noopener" aria-label="GitHub">
             hateshlakhani9@gmail.com</a>
         </p>
 
         <p><i class="fas fa-map-marker-alt"></i>
-          <a href="https://www.google.com/maps/search/Karachi,+Pakistan" target="_blank"
-            style="text-decoration: none; color: inherit;">
+          <a href="https://www.google.com/maps/search/Karachi,+Pakistan" target="_blank" rel="noopener"
+            aria-label="Location">
             Karachi, Pakistan
           </a>
         </p>
 
         <div class="footer-social">
-          <a href="https://github.com/hatesh1" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/923332928556?text=Hi%20Hatesh,%20I%20saw%20your%20portfolio!" target="_blank"><i
-              class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://github.com/hatesh1" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/923332928556?text=Hi%20Hatesh,%20I%20saw%20your%20portfolio!" target="_blank"
+            rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/hateshlakhani" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/hateshlakhani" target="_blank" rel="noopener" aria-label="Facebook"><i
+              class="fab fa-facebook"></i></a>
         </div>
       </div>
     </div>
@@ -159,8 +437,15 @@
     </div>
   </footer>
 
-
   <script src="./js/main.js"></script>
+  <script src="./js/contact.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("BwX_aaI5c2R55B4pY");
+    })();
+  </script>
 
 </body>
 

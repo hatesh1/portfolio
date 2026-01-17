@@ -1,5 +1,3 @@
-/* Apply CSS Home page (index.html-file) */
-
 /* Floating Animation Definition */
 @keyframes float {
   0% {
@@ -46,7 +44,7 @@
   animation: float 4s ease-in-out infinite;
 }
 
-body.dark-mode .hero-right img {
+.dark-mode .hero-right img {
   filter: brightness(0.9);
 }
 
@@ -63,7 +61,6 @@ body.dark-mode .hero-right img {
 .name {
   font-size: 48px;
   margin-bottom: 10px;
-  animation: fadeInUp 0.8s ease;
 }
 
 .role {
@@ -80,7 +77,6 @@ body.dark-mode .hero-right img {
   animation: fadeInUp 0.8s ease 0.4s both;
 }
 
-/* hero section btn */
 .hero-btns {
   display: flex;
   justify-content: flex-start;
@@ -118,7 +114,6 @@ body.dark-mode .hero-right img {
   color: white;
 }
 
-/* Hero Socials Container */
 .hero-socials {
   display: flex;
   gap: 20px;
@@ -137,9 +132,9 @@ body.dark-mode .hero-right img {
   transform: translateY(-3px);
 }
 
-/* Dark Mode ke liye icons color white */
-body.dark-mode .hero-socials a {
-  color: #ffffff;
+
+.dark-mode .hero-socials a {
+  color: #bbb;
 }
 
 
@@ -173,10 +168,21 @@ body.dark-mode .hero-socials a {
   }
 }
 
-@media (max-width: 300px) {
-  .hero-content h1 {
-    font-size: 24px !important;
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 5%;
   }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 300px) {
 
   .hero-content h2 {
     font-size: 16px !important;

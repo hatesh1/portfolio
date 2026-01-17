@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Hatesh Lakhani</title>
-  <!-- Meta Tags (For SEO) -->
   <meta name="description"
     content="Hatesh Lakhani - Professional Software Engineer specializing in Web Development, Java, and Spring Boot. View my portfolio and projects.">
   <meta name="keywords"
@@ -14,14 +13,18 @@
   <link rel="icon" type="image/png" href="asset/images/title-logo.png">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/project.css">
-  <!-- Google fonts links -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500&display=swap"
     rel="stylesheet">
-  <!-- Font Awesome link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  </script>
 </head>
 
 <body>
@@ -40,12 +43,10 @@
         <li><a href="./about.html">About</a></li>
         <li><a href="./project.html" class="active">Projects</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank">RESUME</a></li>
-        <li>
-          <button id="theme-toggle" class="theme-toggle">
-            <i class="fa-solid fa-moon"></i>
-          </button>
+        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank" id="resumeBtn" rel="noopener"
+            aria-label="My Resume">RESUME</a>
         </li>
+        <li><button id="theme-toggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button></li>
       </ul>
 
       <!-- Burger Button -->
@@ -53,96 +54,418 @@
         <button id="theme-toggle-mobile" class="theme-toggle mobile" aria-label="Toggle Dark Mode">
           <i class="fa-solid fa-moon"></i>
         </button>
-        <div class="burger">☰</div>
+        <button class="burger" aria-label="Open Menu">☰</button>
       </div>
     </nav>
   </header>
 
   <!-- Projects section -->
-
   <div class="project-heading">
-    <h1>Bringing Ideas to Life Through Code</h1>
+    <h1 class="section-heading">Bringing Ideas to Life Through Code</h1>
   </div>
 
-  <div class="projects-container">
-    <!-- card 1 -->
-    <div class="project-card">
-      <img src="./asset/images/coffee.png" alt="Modern Cafe Website">
-      <h3>Modern Cafe Website</h3>
-      <p>A responsive coffee shop website with multiple pages - Home, About, Menu, and Contact. Built with pure HTML,
-        CSS, and basic JavaScript for smooth scrolling.
-      </p>
-      <div class="btn-container">
-        <a href="https://github.com/hatesh1/coffee-website" target="_blank" class="btn btn-github">Code <i
-            class="fa-brands fa-github"></i></a>
-        <a href="https://hatesh1.github.io/coffee-website" target="_blank" class="btn btn-live">Live Demo <i
-            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+  <div class="featured-wrapper reveal">
+    <div class="project-card featured">
+      <div class="featured-badge"><i class="fa-solid fa-star"></i> Featured Spotlight</div>
+      <div class="featured-flex">
+        <div class="featured-img-box">
+          <div class="mockup-container">
+            <img src="./asset/images/featured.webp" alt="Desktop View" class="desktop-img">
+            <div class="mobile-mockup">
+              <div class="mobile-screen">
+                <img src="./asset/images/Screenmob.webp" alt="Mobile View">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Premium Personal Portfolio</h3>
+          <div class="tech-stack">
+            <span>HTML5</span><span>CSS3</span><span>JS</span><span>SweetAlert2</span>
+          </div>
+          <p>A high-performance personal portfolio. Features a seamless Dual-View UI to demonstrate full responsiveness
+            across all devices.</p>
+          <div class="btn-container">
+            <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/portfolio')"
+              class="btn btn-github">
+              Code <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/portfolio/')"
+              class="btn btn-live">
+              Live Demo <i class="fa-solid fa-check-double"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <!-- card 2 -->
-    <div class="project-card">
-      <img src="./asset/images/portfolio.png" alt="Pizza Webpage">
-      <h3>Personal Portfolio Website</h3>
-      <p>A responsive personal portfolio website built using HTML, CSS, and JavaScript to showcase my projects, skills,
-        and experience.</p>
-      <div class="btn-container">
-        <a href="https://github.com/hatesh1/portfolio" target="_blank" class="btn btn-github">Code <i
-            class="fa-brands fa-github"></i></a>
-        <a href="https://hatesh1.github.io/portfolio" target="_blank" class="btn btn-live">Live Demo <i
-            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+  <!-- Filter Buttons -->
+  <div class="filter-container reveal">
+    <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+    <button class="filter-btn" onclick="filterProjects('web', this)">Web Development</button>
+    <button class="filter-btn" onclick="filterProjects('java', this)">Java/Backend</button>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects-wrapper reveal">
+    <div class="projects-container">
+      <!-- Project 1 -->
+      <div class="project-card" data-category="web">
+        <img src="./asset/images/coffee.webp" alt="Modern Cafe Website">
+        <h3>Modern Cafe Website</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">HTML5</span>
+          <span class="card-badge">CSS3</span>
+          <span class="card-badge">JavaScript</span>
+        </div>
+        <p>A responsive coffee shop website with multiple pages. Built with pure HTML, CSS, and basic JS.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/coffee-website')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/coffee-website')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <!-- card 3 -->
-    <div class="project-card">
-      <img src="./asset/images/pizza-card-3.jpg" alt="Pizza Webpage">
-      <h3>Pizza Recipe Webpage</h3>
-      <p>A simple pizza recipe webpage made with HTML and CSS featuring navigation buttons and HD images.</p>
-      <div class="btn-container">
-        <a href="https://github.com/hatesh1/delicious-pizza-page" target="_blank" class="btn btn-github">Code <i
-            class="fa-brands fa-github"></i></a>
-        <a href="https://hatesh1.github.io/delicious-pizza-page/" target="_blank" class="btn btn-live">Live Demo <i
-            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      <!-- Project 2 -->
+      <div class="project-card" data-category="web">
+        <img src="./asset/images/dicegame.webp" alt="Interactive UI Dice Simulator">
+        <h3>Interactive UI Dice Simulator</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">JavaScript</span>
+          <span class="card-badge">SweetAlert2</span>
+          <span class="card-badge">CSS3</span>
+        </div>
+        <p>A professional-grade dice simulator focusing on UX. Features smooth 3D animations, spatial audio, and
+          SweetAlert jackpot notifications.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/dice-game')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/dice-game/')" class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <!-- card 4 -->
-    <div class="project-card">
-      <img src="./asset/images/travel-toursim-card-1.jpg" alt="Travel & Tourism Management System">
-      <h3>Travel & Tourism Management System</h3>
-      <p>Developed using Java, MySQL, and Swing during my internship to manage tour bookings and packages efficiently.
-      </p>
-      <div class="btn-container">
-        <a href="https://github.com/hatesh1/Travel-And-Tourism-Managment-System" target="_blank"
-          class="btn btn-github">Code <i class="fa-brands fa-github"></i></a>
-        <a href="https://github.com/hatesh1/Travel-And-Tourism-Managment-System" target="_blank"
-          class="btn btn-live disabled">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      <!-- Project 3 -->
+      <div class="project-card mobile-hidden" data-category="web">
+        <img src="./asset/images/luxurytime.webp" alt="Luxury All-in-One Time Suite">
+        <h3>Luxury All-in-One Time Suite</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">JavaScript</span>
+          <span class="card-badge">Glassmorphism UI</span>
+          <span class="card-badge">CSS3 Transforms</span>
+        </div>
+        <p>A premium time-management dashboard featuring synchronized Analog, Digital, and Stopwatch systems with
+          realistic audio feedback and a high-end Glassmorphism design.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/luxury-time-hub')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/luxury-time-hub/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <!-- card 5 -->
-    <div class="project-card">
-      <img src="./asset/images/facebook-profile-clone.jpg" alt="Facebook">
-      <h3>Facebook Profile Clone</h3>
-      <p>A responsive clone of my Facebook profile page built using HTML, CSS, and Bootstrap to practice modern UI
-        layout and styling techniques.</p>
-      <div class="btn-container">
-        <a href="https://github.com/hatesh1/facebook-profile-clone" target="_blank" class="btn btn-github">Code <i
-            class="fa-brands fa-github"></i></a>
-        <a href="https://hatesh1.github.io/facebook-profile-clone/" target="_blank" class="btn btn-live">Live Demo <i
-            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      <!-- Project 4 -->
+      <div class="project-card mobile-hidden" data-category="web">
+        <img src="./asset/images/weatherapp.webp" alt="SkyCast Weather App">
+        <h3>SkyCast: Real-Time Weather Hub</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">API Integration</span>
+          <span class="card-badge">Axios</span>
+          <span class="card-badge">JavaScript</span>
+        </div>
+        <p>A dynamic weather forecast system using OpenWeatherMap API. Implements Async/Await for real-time updates and
+          custom error handling for a robust user experience.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/live-weather-api')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/live-weather-api/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
       </div>
-    </div>
 
+      <!-- Project 5 -->
+      <div class="project-card mobile-hidden" data-category="web">
+        <img src="./asset/images/profesionalgradecal.webp" alt="EduGrade: Advanced Analytics Tool">
+        <h3>EduGrade: Advanced Analytics Tool</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">JavaScript</span>
+          <span class="card-badge">Switch Logic</span>
+          <span class="card-badge">Data Validation</span>
+        </div>
+        <p>A smart grading system with precise GPA calculations and real-time validation. Built using complex
+          Switch-Case logic for accurate academic reporting.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/grade-calculator-switch')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/grade-calculator-switch/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card mobile-hidden" data-category="web">
+        <img src="./asset/images/teacherhiringform.webp" alt="HireCheck Recruitment Portal">
+        <h3>HireCheck: Recruitment Eligibility Portal</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">JavaScript</span>
+          <span class="card-badge">Logical Validation</span>
+          <span class="card-badge">UI/UX</span>
+        </div>
+        <p>An automated screening tool that evaluates candidate eligibility based on age, experience, and academic
+          criteria with instant, dynamic feedback.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/teacher-hiring-form')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/teacher-hiring-form/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="project-card mobile-hidden desktop-hidden" data-category="web">
+        <img src="./asset/images/facebookclone.webp" alt="Facebook UI Visual Prototype">
+        <h3>Facebook UI: Static Prototype</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">Bootstrap 5</span>
+          <span class="card-badge">UI Replication</span>
+          <span class="card-badge">HTML5/CSS3</span>
+        </div>
+        <p>A high-fidelity landing page prototype focusing on pixel-perfect replication of complex social media
+          components using Bootstrap 5.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/facebook-profile-clone')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/facebook-profile-clone/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="project-card mobile-hidden desktop-hidden" data-category="web">
+        <img src="./asset/images/matrix.webp" alt="MatrixMaster: Linear Algebra Suite">
+        <h3>MatrixMaster: Linear Algebra Suite</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">JavaScript</span>
+          <span class="card-badge">Matrix Logic</span>
+          <span class="card-badge">Algorithms</span>
+        </div>
+        <p>An advanced computational tool supporting 2x2, 3x3, and 4x4 matrix operations. Features custom algorithms for
+          multiplication and real-time result validation.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/matrices-calculator')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/matrices-calculator/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 9 -->
+      <div class="project-card mobile-hidden desktop-hidden" data-category="web">
+        <img src="./asset/images/teresharinglanding.webp" alt="Tere: Ride Sharing Landing Page">
+        <h3>Tere: Ride Sharing Landing Page</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">HTML5/CSS3</span>
+          <span class="card-badge">Responsive</span>
+          <span class="card-badge">Vanilla JS</span>
+        </div>
+        <p>A fully responsive, modern landing page for a ride-sharing service. Features a custom mobile navigation
+          toggle and a pixel-perfect eco-friendly UI design.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/tere-ride-sharing-landing-page')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/tere-ride-sharing-landing-page/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 10 -->
+      <div class="project-card mobile-hidden desktop-hidden" data-category="web">
+        <img src="./asset/images/tablegenerator.webp" alt="Logic-Based Table Generator">
+        <h3>Multi-Range Table Generator</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">JavaScript Loops</span>
+          <span class="card-badge">DOM Logic</span>
+          <span class="card-badge">UX/UI</span>
+        </div>
+        <p>A dynamic tool built to generate mathematical tables within custom ranges. Features robust input validation
+          using loops, clipboard integration, and interactive notifications.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/table-generator-loop')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/table-generator-loop/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 11 -->
+      <div class="project-card mobile-hidden desktop-hidden" data-category="web">
+        <img src="./asset/images/todoapp.webp" alt="Todo App with CRUD Operations">
+        <h3>Ultimate Todo Manager</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">CRUD Logic</span>
+          <span class="card-badge">SweetAlert</span>
+          <span class="card-badge">Responsive</span>
+        </div>
+        <p>A professional productivity tool featuring full CRUD capabilities, real-time task counting, and an
+          interactive edit mode with smooth gradient UI animations.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/todo-app-with-sweetalert')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/todo-app-with-sweetalert/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 12 -->
+      <div class="project-card mobile-hidden desktop-hidden" data-category="web">
+        <img src="./asset/images/registrationformsmit.webp" alt="SMIT Registration Form Clone">
+        <h3>SMIT Registration Portal Clone</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">HTML5/CSS3</span>
+          <span class="card-badge">Flex & Grid</span>
+          <span class="card-badge">Tab Logic</span>
+        </div>
+        <p>A high-fidelity clone of the SMIT registration portal. Engineered with CSS Grid for complex form alignment
+          and Vanilla JS for seamless navigation between registration tabs.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/smit-registration-form-clone')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/smit-registration-form-clone/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 13 -->
+      <div class="project-card mobile-hidden desktop-hidden" data-category="web">
+        <img src="./asset/images/bmi.webp" alt="Health Metrics: BMI Calculator">
+        <h3>Health Metrics: BMI Calculator</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">JavaScript Logic</span>
+          <span class="card-badge">Health Math</span>
+          <span class="card-badge">UI/UX</span>
+        </div>
+        <p>A functional health tool that calculates Body Mass Index based on user weight and height. Features real-time
+          category classification and dynamic color-coded feedback.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/bmi-calculator')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/bmi-calculator/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- new project start -->
+      <div class="project-card mobile-hidden desktop-hidden" data-category="java">
+        <img src="./asset/images/travel-toursim-card-1.jpg" alt="Travel System">
+        <h3>Voyage: Enterprise Travel Planner</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">Java Swing</span>
+          <span class="card-badge">MySQL</span>
+          <span class="card-badge">Desktop App</span>
+        </div>
+        <p>A full-scale management system that automates tour bookings and database operations. Implements advanced CRUD
+          logic for seamless travel administration.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)"
+            onclick="viewCode('https://github.com/hatesh1/Travel-And-Tourism-Managment-System')" class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="comingSoon()" class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 14 -->
+      <div class="project-card mobile-hidden desktop-hidden" data-category="web">
+        <img src="./asset/images/pizza-card-3.jpg" alt="Delicious Pizza Recipe Page">
+        <h3>Delicious Pizza Recipe Portal</h3>
+        <div class="card-tech-stack">
+          <span class="card-badge">HTML5</span>
+          <span class="card-badge">CSS3 Styling</span>
+          <span class="card-badge">Smooth Scroll</span>
+        </div>
+        <p>A visually-driven recipe page focusing on clean UI and high-resolution imagery. Implements smooth internal
+          navigation for ingredients and cooking steps using optimized CSS techniques.</p>
+        <div class="btn-container">
+          <a href="javascript:void(0)" onclick="viewCode('https://github.com/hatesh1/delicious-pizza-page')"
+            class="btn btn-github">
+            Code <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="javascript:void(0)" onclick="viewLive('https://hatesh1.github.io/delicious-pizza-page/')"
+            class="btn btn-live">
+            Live Demo <i class="fa-solid fa-check-double"></i>
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="see-more-container">
+    <button id="loadMoreBtn" class="btn-see-more" onclick="showMoreProjects()">
+      See More Projects <i class="fa-solid fa-chevron-down"></i>
+    </button>
   </div>
 
 
   <!-- Back to Top Button -->
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" id="backToTop">
-    ↑
-  </button>
-
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" id="backToTop"
+    aria-label="Back to top">↑</button>
 
   <!-- Footer Section -->
   <footer class="footer">
@@ -166,24 +489,28 @@
       <div class="footer-col">
         <h3>Get In Touch</h3>
         <p><i class="fas fa-envelope"></i>
-          <a href="mailto:hateshlakhani9@gmail.com" style="text-decoration: none; color: inherit;">
+          <a href="mailto:hateshlakhani9@gmail.com" rel="noopener" aria-label="GitHub">
             hateshlakhani9@gmail.com</a>
         </p>
 
         <p><i class="fas fa-map-marker-alt"></i>
-          <a href="https://www.google.com/maps/search/Karachi,+Pakistan" target="_blank"
-            style="text-decoration: none; color: inherit;">
+          <a href="https://www.google.com/maps/search/Karachi,+Pakistan" target="_blank" rel="noopener"
+            aria-label="Location">
             Karachi, Pakistan
           </a>
         </p>
 
         <div class="footer-social">
-          <a href="https://github.com/hatesh1" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/923332928556?text=Hi%20Hatesh,%20I%20saw%20your%20portfolio!" target="_blank"><i
-              class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://github.com/hatesh1" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/923332928556?text=Hi%20Hatesh,%20I%20saw%20your%20portfolio!" target="_blank"
+            rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/hateshlakhani" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/hateshlakhani" target="_blank" rel="noopener" aria-label="Facebook"><i
+              class="fab fa-facebook"></i></a>
         </div>
       </div>
     </div>
@@ -194,6 +521,7 @@
   </footer>
 
   <script src="./js/main.js"></script>
+  <script src="./js/project.js"></script>
 
 </body>
 

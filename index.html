@@ -27,6 +27,13 @@
     rel="stylesheet">
   <!-- Font Awesome link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- SweetAlert2 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  </script>
 </head>
 
 <body>
@@ -45,7 +52,9 @@
         <li><a href="./about.html">About</a></li>
         <li><a href="./project.html">Projects</a></li>
         <li><a href="./contact.html">Contact</a></li>
-        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank">RESUME</a></li>
+        <li><a class="resume-btn" href="./asset/Hatesh-Lakhani-Resume.pdf" target="_blank" id="resumeBtn" rel="noopener"
+            aria-label="My Resume">RESUME</a>
+        </li>
         <li><button id="theme-toggle" class="theme-toggle"><i class="fa-solid fa-moon"></i></button></li>
       </ul>
 
@@ -54,7 +63,7 @@
         <button id="theme-toggle-mobile" class="theme-toggle mobile" aria-label="Toggle Dark Mode">
           <i class="fa-solid fa-moon"></i>
         </button>
-        <div class="burger">☰</div>
+        <button class="burger" aria-label="Open Menu">☰</button>
       </div>
     </nav>
   </header>
@@ -62,7 +71,7 @@
   <div class="hero">
     <div class="hero-left">
       <p class="intro">HI THERE <span class="hand">👋</span> I'M</p>
-      <h1 class="name">HATESH LAKHANI</h1>
+      <h1 class="name section-heading">HATESH LAKHANI</h1>
       <h2 class="role">SOFTWARE ENGINEER</h2>
       <p class="desc">
         I am a passionate software engineer who loves building clean,
@@ -77,14 +86,16 @@
 
       <!-- Social icons -->
       <div class="hero-socials">
-        <a href="https://github.com/hatesh1" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://github.com/hatesh1" target="_blank" rel="noopener" aria-label="GitHub"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/hateshlakhani" target="_blank" rel="noopener" aria-label="Instagram"><i
+            class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com/hateshlakhani" target="_blank" rel="noopener" aria-label="Facebook"><i
+            class="fa-brands fa-facebook"></i></a>
       </div>
     </div>
-
-
 
     <div class="hero-right">
       <img src="./asset/images/software.svg" alt="Software-developer" />
@@ -92,9 +103,8 @@
   </div>
 
   <!-- Back to Top Button -->
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" id="backToTop">
-    ↑
-  </button>
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="back-to-top" id="backToTop"
+    aria-label="Back to top">↑</button>
 
   <!-- Footer Section -->
   <footer class="footer">
@@ -118,24 +128,28 @@
       <div class="footer-col">
         <h3>Get In Touch</h3>
         <p><i class="fas fa-envelope"></i>
-          <a href="mailto:hateshlakhani9@gmail.com" style="text-decoration: none; color: inherit;">
+          <a href="mailto:hateshlakhani9@gmail.com" rel="noopener" aria-label="GitHub">
             hateshlakhani9@gmail.com</a>
         </p>
 
         <p><i class="fas fa-map-marker-alt"></i>
-          <a href="https://www.google.com/maps/search/Karachi,+Pakistan" target="_blank"
-            style="text-decoration: none; color: inherit;">
+          <a href="https://www.google.com/maps/search/Karachi,+Pakistan" target="_blank" rel="noopener"
+            aria-label="Location">
             Karachi, Pakistan
           </a>
         </p>
 
         <div class="footer-social">
-          <a href="https://github.com/hatesh1" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/923332928556?text=Hi%20Hatesh,%20I%20saw%20your%20portfolio!" target="_blank"><i
-              class="fa-brands fa-whatsapp"></i></a>
-          <a href="https://www.instagram.com/hateshlakhani" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://facebook.com/hateshlakhani" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://github.com/hatesh1" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/hatesh-lakhani" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/923332928556?text=Hi%20Hatesh,%20I%20saw%20your%20portfolio!" target="_blank"
+            rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/hateshlakhani" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/hateshlakhani" target="_blank" rel="noopener" aria-label="Facebook"><i
+              class="fab fa-facebook"></i></a>
         </div>
       </div>
     </div>
@@ -144,6 +158,7 @@
       <p>&copy; 2024 - 2026 Hatesh Lakhani. All Rights Reserved.</p>
     </div>
   </footer>
+
 
   <script src="./js/main.js"></script>
 
